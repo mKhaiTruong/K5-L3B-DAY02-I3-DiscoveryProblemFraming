@@ -24,7 +24,7 @@
 |   4 | Trịnh Tuấn Phong      | Quản lý việc và deadline phân tán | Sinh viên K5 vừa đi thực tập, tự quản lý cả lịch học và lịch làm                          | Bước 5–6 là bước duy nhất phải làm hoàn toàn bằng tay và là nơi xảy ra bỏ sót; sau đó không có bước kiểm tra lại nào trong ngày                                                     | Tháng vừa rồi bạn bỏ sót mấy deadline? Sót vì không biết hạn hay vì không kịp làm? (Triệu Quốc Khánh)                                                                                                                                                                   |
 |   5 | Trịnh Tuấn Phong      | Đọc tài liệu dài và tổng hợp      | Sinh viên vừa học vừa đi làm, đọc tài liệu chuyên môn và bài báo hằng tuần                | Bước mở lại và đọc lại 5–8 nguồn, khoảng 45 phút/bản — vì ghi chú cũ quá sơ sài để viết được                                                                                        | Bạn đã xác minh rằng việc đọc lại và tổng hợp 5–8 nguồn tài liệu là một vấn đề phổ biến với sinh viên vừa học vừa làm chưa, hay đây chỉ là khó khăn từ thói quen ghi chú cá nhân? (Trương Đặng Minh Khuê)                                                               |
 |   6 | Trịnh Tuấn Phong      | Soạn trả lời tin nhắn/email       | Sinh viên, trả lời tin nhắn của nhóm học, mentor và ban tổ chức CLB                       | Bước soạn, khoảng 8 phút trên tổng 15 phút — phải viết lại từ đầu mỗi lần vì không có mẫu sẵn                                                                                       | Với 5 tin/tuần, mỗi tin khoảng 15 phút, nếu đã có sẵn 3–5 mẫu trả lời cho các loại tin hay gặp và một checklist trước khi gửi thì có thật sự cần dùng AI không, hay chỉ cần sửa quy trình là đủ? (Trịnh Tuấn Phong)                                                     |
-|   7 | Nguyễn Đình Nam       | Employee Onboarding Tracker       | HR điều phối chính; nhân viên mới, quản lý trực tiếp và IT cùng tham gia.                 | Theo dõi và nhắc các bên hoàn tất thủ tục, quyền truy cập và thiết bị: khoảng 30 phút/nhân viên.                                                                                    | (Triệu Quốc Khánh)                                                                                                                                                                                                                                                      |
+|   7 | Nguyễn Đình Nam       | Employee Onboarding Tracker       | HR điều phối chính; nhân viên mới, quản lý trực tiếp và IT cùng tham gia.                 | Theo dõi và nhắc các bên hoàn tất thủ tục, quyền truy cập và thiết bị: khoảng 30 phút/nhân viên.                                                                                    | Đã có Excel, phần mềm nhân sự hoặc nhắc về việc tự động hóa chưa, và nó thiếu gì? (Triệu Quốc Khánh)                                                                                                                                                                    |
 |   8 | Nguyễn Đình Nam       | Travel Expense Claim Check        | Nhân viên đi công tác lập hồ sơ; quản lý phê duyệt; kế toán kiểm tra và xử lý thanh toán. | Kế toán kiểm tra chứng từ và xác định giấy tờ thiếu hoặc chưa hợp lệ: khoảng 5 phút/lượt kiểm tra (ước tính ban đầu, cần đo thực tế; chưa tính thời gian chờ bổ sung và phê duyệt). | Nếu việc kiểm tra chứng từ chỉ mất khoảng 5 phút/lượt, tần suất phát sinh hồ sơ có đủ lớn để justify chi phí phát triển và vận hành AI không? (Trương Đặng Minh Khuê)                                                                                                   |
 |   9 | Nguyễn Đình Nam       | Vendor Invoice Reconciliation     | Kế toán kiểm tra chính; bộ phận mua hàng xác minh đơn đặt hàng và biên nhận.              | So sánh mã hàng, số lượng và đơn giá giữa các hồ sơ: khoảng 2 phút, trong tổng 5 phút/hóa đơn.                                                                                      | Phần mềm kế toán công ty đã có sẵn chức năng đối chiếu hóa đơn chưa? (Triệu Quốc Khánh)                                                                                                                                                                                 |
 |  10 | Triệu Quốc Khánh      | Inventory Receipt Entry           | Nhân viên nhập liệu phụ trách phiếu nhập kho                                              | Bước tìm mã hàng + gõ số lượng + kiểm tra, khoảng 10 phút/phiếu (chiếm hơn 80% thời gian)                                                                                           | Trong 10 phút/phiếu, thời gian mất ở gõ số lượng hay ở việc tìm đúng mã hàng khi tên hàng trên phiếu không khớp danh mục? Nếu là do danh mục mã hàng lộn xộn thì chuẩn hóa danh mục và cho quét barcode/điền sẵn từ PO (rule) đã giải được 80% chưa? (Trịnh Tuấn Phong) |
@@ -45,40 +45,55 @@
 Gốc là **1 outcome**. Nhánh là **opportunity** (nhu cầu, pain), không phải tính năng hay công cụ.
 
 ```text
-OUTCOME:
-├── Opportunity A:
-├── Opportunity B:
-└── Opportunity C:
+OUTCOME: Giảm thời gian kế toán cần để kiểm tra và đối chiếu thông tin hóa đơn, đồng thời hạn chế sai sót trong thanh toán.
+├── Opportunity A:  Thông tin mã hàng, số lượng và đơn giá nằm ở nhiều chứng từ khác nhau (hóa đơn, đơn đặt hàng, biên nhận).
+├── Opportunity B:  Kế toán phải kiểm tra và đối chiếu từng trường thông tin thủ công để phát hiện sự không khớp giữa các chứng từ.
+└── Opportunity C:  Chưa rõ phần mềm kế toán hiện tại đã hỗ trợ đối chiếu hóa đơn hay chưa, dẫn đến chưa xác định được phần
+                    công việc thực sự còn cần xử lý thủ công.
 ```
 
 Những ý đã gạch bỏ vì là solution đội lốt opportunity:
 
--
+- Tự động đối chiếu hóa đơn với PO và biên nhận (có thể dùng automation)
+- AI phát hiện sai lệch giữa các chứng từ (Đây là AI cụ thể)
+- Dashboard theo dõi trạng thái hóa đơn (Đây là giao diện hệ thống)
+- Tích hợp OCR để trích xuất thông tin hóa đơn (Giải pháp dùng computer vision)
 
 ### 2.4. Chấm điểm shortlist (1–5)
 
 | Candidate                         | Actor rõ | Quy trình rõ | Pain có bằng chứng | Impact đo được | Vừa sức lab | So sánh được No AI/Rule/Workflow/Agent | Nhóm hiểu domain | Tổng |
 | --------------------------------- | -------: | -----------: | -----------------: | -------------: | ----------: | -------------------------------------: | ---------------: | ---: |
-| Medical Knowledge Retrieval       |          |              |                    |                |             |                                        |                  |      |
-| Medical Record Summarization      |          |              |                    |                |             |                                        |                  |      |
-| Pneumonia Detection on X-ray      |          |              |                    |                |             |                                        |                  |      |
-| Quản lý việc và deadline phân tán |          |              |                    |                |             |                                        |                  |      |
-| Đọc tài liệu dài và tổng hợp      |          |              |                    |                |             |                                        |                  |      |
-| Soạn trả lời tin nhắn/email       |          |              |                    |                |             |                                        |                  |      |
-| Employee Onboarding Tracker       |          |              |                    |                |             |                                        |                  |      |
-| Travel Expense Claim Check        |          |              |                    |                |             |                                        |                  |      |
-| Vendor Invoice Reconciliation     |          |              |                    |                |             |                                        |                  |      |
-| Inventory Receipt Entry           |          |              |                    |                |             |                                        |                  |      |
-| Monthly Spending Summary          |          |              |                    |                |             |                                        |                  |      |
-| CV Tailoring                      |          |              |                    |                |             |                                        |                  |      |
+| Medical Knowledge Retrieval       |        5 |            4 |                  2 |              2 |           4 |                                      4 |                4 |   25 |
+| Medical Record Summarization      |        5 |            4 |                  2 |              2 |           4 |                                      4 |                4 |   25 |
+| Pneumonia Detection on X-ray      |        5 |            4 |                  3 |              3 |           3 |                                      4 |                4 |   26 |
+| Quản lý việc và deadline phân tán |        5 |            5 |                  4 |              4 |           3 |                                      3 |                4 |   28 |
+| Đọc tài liệu dài và tổng hợp      |        4 |            4 |                  4 |              4 |           4 |                                      4 |                4 |   28 |
+| Soạn trả lời tin nhắn/email       |        4 |            4 |                  3 |              3 |           5 |                                      3 |                4 |   25 |
+| Employee Onboarding Tracker       |        5 |            4 |                  3 |              3 |           3 |                                      4 |                3 |   25 |
+| Travel Expense Claim Check        |        5 |            4 |                  3 |              3 |           4 |                                      4 |                3 |   26 |
+| Vendor Invoice Reconciliation     |        5 |            5 |                  4 |              4 |           4 |                                      5 |                3 |   30 |
+| Inventory Receipt Entry           |        4 |            4 |                  4 |              4 |           4 |                                      4 |                3 |   27 |
+| Monthly Spending Summary          |        4 |            3 |                  2 |              2 |           4 |                                      3 |                5 |   23 |
+| CV Tailoring                      |        4 |            4 |                  3 |              3 |           5 |                                      3 |                5 |   27 |
 
-**Candidate được chọn:**
+**Candidate được chọn:** Vendor Invoice Reconciliation
 
 **Vì sao chọn:**
 
+- Actor và quy trình rõ ràng cùng với Bottleneck cụ thể gồm đối chiếu mã hàng, số lượng và đơn giá giữa nhiều chứng từ.
+- Có số liệu thời gian ban đầu (2/5 phút mỗi hóa đơn).
+- Phù hợp để xây dựng prototype và so sánh 4 mức No AI/Rule/Workflow/Agent.
+
 **Vì sao loại các candidate còn lại:**
 
+- Một số bài toán thiếu bằng chứng về pain và impact, trong khi một số có thể giải quyết bằng workflow hoặc công cụ thông thường, chưa cần AI.
+- Một số cần dữ liệu chuyên ngành hoặc tích hợp hệ thống phức tạp.
+- Một số có phạm vi rộng hoặc impact chưa đủ rõ.
+
 **Xử lý bất đồng (nếu có):**
+
+- Các thành viên lúc đầu chưa thống nhất hoặc còn nhầm lẫn về cách hiểu quy trình đối chiếu hóa đơn, đặc biệt là phân biệt giữa số tiền được duyệt, số tiền đã thanh toán và số tiền còn lại.
+- Nhóm cần làm rõ quy trình nghiệp vụ trước khi xác định giải pháp.
 
 ---
 
@@ -86,18 +101,20 @@ Những ý đã gạch bỏ vì là solution đội lốt opportunity:
 
 ### 3.1. Assumption Map
 
-|   # | Giả định | Loại (Value / Usability / Feasibility / Viability) | Quan trọng (1–5) | Đã có bằng chứng (1–5) | Kiểm chứng trước? |
-| --: | -------- | -------------------------------------------------- | ---------------: | ---------------------: | ----------------- |
-|   1 |          |                                                    |                  |                        |                   |
-|   2 |          |                                                    |                  |                        |                   |
-|   3 |          |                                                    |                  |                        |                   |
-|   4 |          |                                                    |                  |                        |                   |
-|   5 |          |                                                    |                  |                        |                   |
-|   6 |          |                                                    |                  |                        |                   |
-
-_Điền 4–6 giả định; xóa dòng thừa._
+|   # | Giả định                                                                                                      | Loại (Value / Usability / Feasibility / Viability) | Quan trọng (1–5) | Đã có bằng chứng (1–5) | Kiểm chứng trước? |
+| --: | ------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- | ---------------: | ---------------------: | ----------------- |
+|   1 | Kế toán thực sự mất nhiều thời gian đối chiếu thủ công giữa invoice, PO và phiếu nhận hàng.                   | Value                                              |                5 |                      2 | Có                |
+|   2 | Sai lệch về mã hàng, số lượng hoặc đơn giá có thể gây chậm trễ hoặc sai sót trong thanh toán.                 | Value                                              |                5 |                      2 | Có                |
+|   3 | Phần mềm kế toán hiện tại chưa hỗ trợ đầy đủ việc đối chiếu giữa các chứng từ này.                            | Value                                              |                5 |                      1 | Có                |
+|   4 | Thông tin trên invoice, PO và phiếu nhận hàng có thể trích xuất để tự động so sánh.                           | Feasibility                                        |                4 |                      2 | Có                |
+|   5 | Kế toán có thể dễ dàng kiểm tra và xác nhận các sai lệch mà hệ thống phát hiện.                               | Usability                                          |                4 |                      1 | Có                |
+|   6 | Công ty cho phép sử dụng công cụ xử lý dữ liệu chứng từ nội bộ và có thể triển khai trong quy trình hiện tại. | Viability                                          |                5 |                      1 | Có                |
 
 Giả định nhóm kiểm chứng trong buổi này:
+
+1. Kế toán mất nhiều thời gian đối chiếu thủ công giữa invoice, PO và phiếu nhận hàng.
+2. Phần mềm kế toán hiện tại chưa hỗ trợ đầy đủ việc đối chiếu này.
+3. Sai lệch giữa các chứng từ gây ra công việc bổ sung hoặc chậm thanh toán.
 
 ### 3.2. Kiểm chứng
 
