@@ -51,20 +51,20 @@ Lăng kính: **Lặp lại** · **Tốn thời gian** · **Cần đọc, tổng 
 
 | Trường | Nội dung |
 |---|---|
-| Job Story | Khi gửi yêu cầu hoàn ứng chi phí công tác, tôi muốn biết hồ sơ còn thiếu gì, để yêu cầu được xử lý mà không phải bổ sung nhiều lần. |
-| Actor | Nhân viên đi công tác; kế toán kiểm tra và xử lý hồ sơ. |
-| Thời điểm / bối cảnh | Sau chuyến công tác, khi nhân viên nộp hóa đơn, biên nhận và yêu cầu hoàn ứng. |
-| Quy trình hiện tại (3–7 bước) | 1. Nhân viên gửi yêu cầu → 2. Kế toán kiểm tra chứng từ → 3. Đối chiếu chính sách → 4. Yêu cầu bổ sung nếu thiếu hoặc chuyển duyệt. |
-| Bottleneck (bước nào, mất bao nhiêu phút) | Kiểm tra chứng từ và xác định hồ sơ thiếu gì: khoảng **5 phút/yêu cầu**. |
-| Impact (nếu không giải thì sao) | Hồ sơ bị trả lại để bổ sung, kéo dài thời gian hoàn ứng và tăng trao đổi giữa nhân viên với kế toán. |
-| Success metric (baseline → target) | Thời gian kiểm tra ban đầu: **10 → 5 phút/yêu cầu**; tỷ lệ hồ sơ phải bổ sung: **25% → dưới 15%** *(ước tính, cần xác minh)*. |
-| Phương án không dùng AI | Checklist chứng từ theo loại chi phí; quy tắc kiểm tra trường bắt buộc và hướng dẫn nộp hồ sơ. |
-| Giả thuyết về AI (nếu có) | Nếu chứng từ có nhiều định dạng, OCR/AI có thể trích xuất thông tin để kế toán kiểm tra nhanh hơn; cần người xác nhận trước khi duyệt. |
-| Cảm nhận nhanh | Workflow |
+| Job Story | Khi hoàn tất chuyến công tác và chuẩn bị đề nghị thanh toán, tôi muốn biết hồ sơ đã đủ và hợp lệ chưa, để không phải bổ sung giấy tờ nhiều lần và nhận hoàn tiền đúng hạn. |
+| Actor | Nhân viên đi công tác lập hồ sơ; quản lý phê duyệt; kế toán kiểm tra và xử lý thanh toán. |
+| Thời điểm / bối cảnh | Sau chuyến công tác, khi nhân viên lập đơn đề nghị thanh toán và tập hợp chứng từ trước khi gửi quản lý duyệt. |
+| Quy trình hiện tại (3–7 bước) | 1. Nhân viên đi công tác → 2. Điền đơn đề nghị thanh toán và tập hợp hóa đơn, vé, quyết định đi công tác → 3. Nộp quản lý phê duyệt → 4. Nộp hồ sơ cho kế toán kiểm tra → 5. Nếu thiếu/sai giấy tờ, kế toán trả hồ sơ để nhân viên bổ sung và nộp lại; nếu đầy đủ, kế toán xử lý hoàn tiền. |
+| Bottleneck (bước nào, mất bao nhiêu phút) | Kế toán kiểm tra chứng từ và xác định giấy tờ thiếu hoặc chưa hợp lệ: khoảng **5 phút/lượt kiểm tra** *(ước tính ban đầu, cần đo thực tế; chưa tính thời gian chờ bổ sung và phê duyệt)*. |
+| Impact (nếu không giải thì sao) | Hồ sơ bị trả lại, nhân viên phải bổ sung và nộp lại; phát sinh trao đổi qua lại, tăng thời gian xử lý của kế toán và làm chậm hoàn tiền. |
+| Success metric (baseline → target) | Thời gian kiểm tra hồ sơ: **10 → 5 phút/lượt**; tỷ lệ hồ sơ phải bổ sung: **25% → dưới 15%** *(mục tiêu minh họa, cần xác minh baseline thực tế)*. |
+| Phương án không dùng AI | Checklist giấy tờ theo loại chi phí; hướng dẫn hồ sơ rõ ràng; form điện tử bắt buộc điền trường thông tin và đính kèm giấy tờ cần thiết trước khi gửi. |
+| Giả thuyết về AI (nếu có) | AI/OCR có thể đọc hóa đơn, vé và quyết định đi công tác, đối chiếu với checklist, rồi báo giấy tờ thiếu, ảnh khó đọc hoặc thông tin cần kiểm tra. Kế toán vẫn xác minh và quyết định thanh toán. |
+| Cảm nhận nhanh | Workflow + Rule; thử AI/OCR nếu chứng từ ảnh hoặc PDF khiến việc kiểm tra thủ công tốn thời gian. |
 
 **Quy trình nháp hiện tại:**
 
-```text
+
 [Nộp yêu cầu: 1'] → [Kiểm tra chứng từ: 5'] ← BOTTLENECK
 → [Đối chiếu chính sách: 2'] → [Yêu cầu bổ sung hoặc chuyển duyệt: 2']
 Tổng: khoảng 10 phút/yêu cầu
@@ -82,23 +82,16 @@ Tổng: khoảng 10 phút/yêu cầu
 | Success metric (baseline → target) | Thời gian HR dành cho onboarding: **120 → 75 phút/nhân viên mới**; tỷ lệ hoàn tất checklist đúng ngày bắt đầu: **chưa đo → mục tiêu 90%** *(ước tính, cần xác minh)*. |
 | Phương án không dùng AI | Checklist onboarding theo vai trò, người phụ trách và hạn hoàn thành; nhắc việc theo lịch. |
 | Giả thuyết về AI (nếu có) | AI có thể trả lời câu hỏi phổ biến dựa trên tài liệu onboarding đã duyệt; checklist và nhắc việc có thể giải quyết phần điều phối chính. |
-| Cảm nhận nhanh | Workflow |Job Story	Khi nhân viên mới bắt đầu làm việc, tôi muốn biết các bước onboarding cần hoàn thành, để họ có thể bắt đầu công việc mà không bỏ sót thủ tục.
-Actor	HR điều phối chính; nhân viên mới, quản lý trực tiếp và IT cùng tham gia.
-Thời điểm / bối cảnh	Từ khi nhân viên mới xác nhận ngày bắt đầu đến khi hoàn tất thủ tục, thiết bị và quyền truy cập.
-Quy trình hiện tại (3–7 bước)	1. HR nhận thông tin nhân viên → 2. Lập danh sách thủ tục → 3. Theo dõi IT cấp quyền và thiết bị → 4. Hướng dẫn nhân viên → 5. Xác nhận hoàn tất.
-Bottleneck (bước nào, mất bao nhiêu phút)	Theo dõi và nhắc các bên hoàn tất thủ tục, quyền truy cập và thiết bị: khoảng 30 phút/nhân viên.
-Impact (nếu không giải thì sao)	Nhân viên có thể thiếu quyền truy cập hoặc thiết bị khi bắt đầu; HR và quản lý phải nhắc nhiều bên, thủ tục có thể bị bỏ sót.
-Success metric (baseline → target)	Thời gian HR dành cho onboarding: 120 → 75 phút/nhân viên mới; tỷ lệ hoàn tất checklist đúng ngày bắt đầu: chưa đo → mục tiêu 90% (ước tính, cần xác minh).
-Phương án không dùng AI	Checklist onboarding theo vai trò, người phụ trách và hạn hoàn thành; nhắc việc theo lịch.
-Giả thuyết về AI (nếu có)	AI có thể trả lời câu hỏi phổ biến dựa trên tài liệu onboarding đã duyệt; checklist và nhắc việc có thể giải quyết phần điều phối chính.
-Cảm nhận nhanh	Workflow
+| Cảm nhận nhanh | Workflow |
+
+**Quy trình nháp hiện tại:**
 
 
-Đặt quy trình nháp bên dưới bảng, tách riêng khỏi bảng:
 [Nhận thông tin: 15'] → [Lập checklist: 20']
 → [Theo dõi quyền truy cập/thiết bị: 30'] ← BOTTLENECK
 → [Hướng dẫn thủ tục: 40'] → [Xác nhận hoàn tất: 15']
 Tổng: khoảng 120 phút/nhân viên mới
+
 ### Problem Card #3
 
 | Trường | Nội dung |
