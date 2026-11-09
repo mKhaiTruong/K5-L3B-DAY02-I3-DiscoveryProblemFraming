@@ -44,73 +44,88 @@ Bỏ qua:
 
 ### Bảng chọn top 3
 
-| Rank | Problem | Vì sao chọn | Điều còn chưa chắc |
-| ---: | ------- | ----------- | ------------------ |
-|    1 |         |             |                    |
-|    2 |         |             |                    |
-|    3 |         |             |                    |
+| Rank | Problem                                                                                 | Vì sao chọn                                                                                                                                                                        | Điều còn chưa chắc                                                                                                                 |
+| ---: | --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+|    1 | Hỗ trợ bác sĩ tìm kiếm và tổng hợp tài liệu y khoa cho các ca bệnh hiếm hoặc bất thường | Bác sĩ là actor rõ ràng; workflow tìm kiếm > đọc > đối chiếu > tổng hợp khá dễ mô tả. Có thể đo thời gian tìm tài liệu và mức độ liên quan của kết quả. Phù hợp để thử nghiệm RAG. | Chưa xác định nguồn tài liệu y khoa đáng tin cậy; cần kiểm chứng độ chính xác và tính cập nhật của thông tin.                      |
+|    2 | Tự động tóm tắt hồ sơ bệnh án của bệnh nhân qua nhiều lần khám                          | Workflow tương đối rõ; vấn đề đọc nhiều hồ sơ và tổng hợp thông tin có thể gây tốn thời gian. Có thể đo thời gian đọc hồ sơ và độ đầy đủ của bản tóm tắt.                          | Chưa biết mức độ sẵn có của dữ liệu hồ sơ; cần đảm bảo quyền riêng tư và tránh bỏ sót thông tin quan trọng.                        |
+|    3 | Hỗ trợ phát hiện dấu hiệu nghi ngờ viêm phổi trên ảnh X-quang                           | Bottleneck tương đối cụ thể; có thể đánh giá bằng Recall, Precision, F1-score và thời gian đọc ảnh. Giá trị tiềm năng cao nếu giảm được nguy cơ bỏ sót dấu hiệu bất thường.        | Cần dữ liệu ảnh X-quang đã được chuyên gia gán nhãn; yêu cầu kiểm định lâm sàng cao. Chưa xác minh được thời gian đọc ảnh thực tế. |
 
 ### Problem Card #1
 
-| Trường                                    | Nội dung                                    |
-| ----------------------------------------- | ------------------------------------------- |
-| Job Story                                 | Khi …, tôi muốn …, để …                     |
-| Actor                                     |                                             |
-| Thời điểm / bối cảnh                      |                                             |
-| Quy trình hiện tại (3–7 bước)             |                                             |
-| Bottleneck (bước nào, mất bao nhiêu phút) |                                             |
-| Impact (nếu không giải thì sao)           |                                             |
-| Success metric (baseline → target)        |                                             |
-| Phương án không dùng AI                   |                                             |
-| Giả thuyết về AI (nếu có)                 |                                             |
-| Cảm nhận nhanh                            | No AI / Rule / Workflow / Agent / Chưa biết |
+| Trường                                    | Nội dung                                                                                                                                                                                                                                                                                                                         |
+| ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Job Story                                 | Khi gặp các ca bệnh hiếm hoặc có biểu hiện bất thường, tôi muốn nhanh chóng tìm kiếm và tổng hợp các tài liệu y khoa liên quan, để có thêm thông tin tham khảo phục vụ quá trình đánh giá và đưa ra hướng xử trí phù hợp.                                                                                                        |
+| Actor                                     | Bác sĩ điều trị / bác sĩ chuyên khoa                                                                                                                                                                                                                                                                                             |
+| Thời điểm / bối cảnh                      | Khi tiếp nhận ca bệnh hiếm, phức tạp hoặc có biểu hiện không điển hình.                                                                                                                                                                                                                                                          |
+| Quy trình hiện tại (3–7 bước)             | 1. Tiếp nhận và đánh giá tình trạng bệnh nhân. 2. Nhận thấy ca bệnh có biểu hiện bất thường hoặc khó xác định. 3. Tìm kiếm tài liệu y khoa trên các nguồn chuyên ngành. 4. Đọc và chọn lọc các tài liệu liên quan. 5. Đối chiếu thông tin từ nhiều nguồn. 6. Tổng hợp thông tin để tham khảo trong quá trình đánh giá và xử trí. |
+| Bottleneck (bước nào, mất bao nhiêu phút) | Bước 3–5: Tìm kiếm, đọc và đối chiếu nhiều tài liệu. Thời gian ước tính ban đầu: 30–60 phút/ca (giả định, cần khảo sát thực tế).                                                                                                                                                                                                 |
+| Impact (nếu không giải thì sao)           | Bác sĩ mất nhiều thời gian nghiên cứu; có thể bỏ sót tài liệu liên quan hoặc khó tiếp cận thông tin cập nhật, làm chậm quá trình đánh giá ca bệnh.                                                                                                                                                                               |
+| Success metric (baseline → target)        | Thời gian tìm kiếm và tổng hợp tài liệu: 30–60 phút → giảm ít nhất 30% (mục tiêu giả định). Ngoài ra: độ chính xác thông tin, mức độ liên quan của tài liệu và tỷ lệ câu trả lời có trích dẫn nguồn kiểm chứng được.                                                                                                             |
+| Phương án không dùng AI                   | Xây dựng thư viện tài liệu y khoa được phân loại theo bệnh lý, chuyên khoa và từ khóa; sử dụng bộ lọc và mẫu tổng hợp tài liệu chuẩn hóa.                                                                                                                                                                                        |
+| Giả thuyết về AI (nếu có)                 | Sử dụng RAG để tìm kiếm tài liệu từ nguồn y khoa đáng tin cậy, truy xuất các đoạn liên quan và tạo bản tổng hợp kèm trích dẫn để bác sĩ kiểm tra.                                                                                                                                                                                |
+| Cảm nhận nhanh                            | Workflow (quy trình tìm kiếm, truy xuất và tổng hợp tài liệu có AI hỗ trợ).                                                                                                                                                                                                                                                      |
 
 Quy trình nháp hiện tại:
 
 ```text
-
+1. Bác sĩ tiếp nhận và đánh giá tình trạng bệnh nhân.
+2. Bác sĩ nhận thấy ca bệnh có biểu hiện hiếm gặp hoặc bất thường.
+3. Bác sĩ tìm kiếm tài liệu y khoa trên các nguồn chuyên ngành.
+4. Bác sĩ đọc và chọn lọc những tài liệu liên quan.
+5. Bác sĩ đối chiếu thông tin giữa các tài liệu.
+6. Bác sĩ tổng hợp kiến thức để tham khảo trong quá trình đánh giá và xử trí ca bệnh.
 ```
 
 ### Problem Card #2
 
-| Trường                                    | Nội dung                                    |
-| ----------------------------------------- | ------------------------------------------- |
-| Job Story                                 | Khi …, tôi muốn …, để …                     |
-| Actor                                     |                                             |
-| Thời điểm / bối cảnh                      |                                             |
-| Quy trình hiện tại (3–7 bước)             |                                             |
-| Bottleneck (bước nào, mất bao nhiêu phút) |                                             |
-| Impact (nếu không giải thì sao)           |                                             |
-| Success metric (baseline → target)        |                                             |
-| Phương án không dùng AI                   |                                             |
-| Giả thuyết về AI (nếu có)                 |                                             |
-| Cảm nhận nhanh                            | No AI / Rule / Workflow / Agent / Chưa biết |
+| Trường                                    | Nội dung                                                                                                                                                                                                                                                                                                                                |
+| ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Job Story                                 | Khi tiếp nhận bệnh nhân đã có nhiều lần khám trước đó, tôi muốn nhanh chóng nắm bắt toàn bộ tiền sử và diễn biến bệnh án, để tiết kiệm thời gian và đưa ra đánh giá phù hợp.                                                                                                                                                            |
+| Actor                                     | Bác sĩ điều trị                                                                                                                                                                                                                                                                                                                         |
+| Thời điểm / bối cảnh                      | Khi bệnh nhân tái khám, chuyển khoa hoặc được tiếp nhận tại bệnh viện mới.                                                                                                                                                                                                                                                              |
+| Quy trình hiện tại (3–7 bước)             | 1. Bác sĩ tiếp nhận hồ sơ bệnh án. 2. Mở và xem lại hồ sơ từ những lần khám trước. 3. Đọc tiền sử bệnh, triệu chứng, kết quả xét nghiệm và chẩn đoán. 4. Đối chiếu thông tin giữa các lần khám. 5. Tổng hợp diễn biến bệnh và quá trình điều trị. 6. Sử dụng thông tin tổng hợp để đánh giá tình trạng hiện tại và đưa ra hướng xử trí. |
+| Bottleneck (bước nào, mất bao nhiêu phút) | Bước 3–5: Đọc, đối chiếu và tổng hợp nhiều hồ sơ bệnh án. Thời gian ước tính: 15–30 phút/bệnh nhân (giả định, cần khảo sát thực tế).                                                                                                                                                                                                    |
+| Impact (nếu không giải thì sao)           | Bác sĩ mất nhiều thời gian xem lại hồ sơ; có thể bỏ sót thông tin quan trọng, khó nắm bắt diễn biến bệnh và làm chậm quá trình khám chữa bệnh.                                                                                                                                                                                          |
+| Success metric (baseline → target)        | Thời gian đọc và tổng hợp hồ sơ: 15–30 phút → giảm ít nhất 30% (mục tiêu giả định). Độ chính xác, độ đầy đủ của bản tóm tắt và tỷ lệ thông tin có thể truy xuất về hồ sơ gốc.                                                                                                                                                           |
+| Phương án không dùng AI                   | Chuẩn hóa biểu mẫu bệnh án và xây dựng mẫu tóm tắt hồ sơ theo các mục: tiền sử, chẩn đoán, xét nghiệm, thuốc và quá trình điều trị.                                                                                                                                                                                                     |
+| Giả thuyết về AI (nếu có)                 | Sử dụng LLM để đọc và tóm tắt hồ sơ bệnh án qua nhiều lần khám, trích xuất các thông tin quan trọng và sắp xếp theo dòng thời gian. Bác sĩ kiểm tra lại nội dung với hồ sơ gốc.                                                                                                                                                         |
+| Cảm nhận nhanh                            | Workflow (quy trình tóm tắt hồ sơ có AI hỗ trợ).                                                                                                                                                                                                                                                                                        |
 
 Quy trình nháp hiện tại:
 
 ```text
-
+1. Bác sĩ tiếp nhận hồ sơ bệnh án của bệnh nhân.
+2. Bác sĩ mở và xem lại các hồ sơ từ những lần khám trước.
+3. Bác sĩ đọc thông tin về tiền sử bệnh, triệu chứng, kết quả xét nghiệm và chẩn đoán.
+4. Bác sĩ đối chiếu thông tin giữa các lần khám.
+5. Bác sĩ tổng hợp diễn biến bệnh và quá trình điều trị.
+6. Bác sĩ sử dụng thông tin tổng hợp để đánh giá tình trạng hiện tại và đưa ra hướng xử trí.
 ```
 
 ### Problem Card #3
 
-| Trường                                    | Nội dung                                    |
-| ----------------------------------------- | ------------------------------------------- |
-| Job Story                                 | Khi …, tôi muốn …, để …                     |
-| Actor                                     |                                             |
-| Thời điểm / bối cảnh                      |                                             |
-| Quy trình hiện tại (3–7 bước)             |                                             |
-| Bottleneck (bước nào, mất bao nhiêu phút) |                                             |
-| Impact (nếu không giải thì sao)           |                                             |
-| Success metric (baseline → target)        |                                             |
-| Phương án không dùng AI                   |                                             |
-| Giả thuyết về AI (nếu có)                 |                                             |
-| Cảm nhận nhanh                            | No AI / Rule / Workflow / Agent / Chưa biết |
+| Trường                                    | Nội dung                                                                                                                                                                                                                                                                                                                                                                                          |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Job Story                                 | Khi phải đọc và đánh giá nhiều ảnh X-quang trong ngày, tôi muốn nhanh chóng nhận diện những vùng phổi có dấu hiệu bất thường, để giảm nguy cơ bỏ sót dấu hiệu nghi ngờ viêm phổi và đưa ra đánh giá kịp thời.                                                                                                                                                                                     |
+| Actor                                     | Bác sĩ chẩn đoán hình ảnh                                                                                                                                                                                                                                                                                                                                                                         |
+| Thời điểm / bối cảnh                      | Hằng ngày, khi bác sĩ tiếp nhận và phân tích ảnh X-quang ngực của bệnh nhân.                                                                                                                                                                                                                                                                                                                      |
+| Quy trình hiện tại (3–7 bước)             | 1. Bệnh nhân được chỉ định chụp X-quang ngực. 2. Hình ảnh được chuyển đến hệ thống để bác sĩ xem xét. 3. Bác sĩ quan sát và phân tích các vùng phổi. 4. Bác sĩ xác định các dấu hiệu bất thường, bao gồm dấu hiệu nghi ngờ viêm phổi. 5. Bác sĩ ghi nhận kết quả và chuyển thông tin cho bác sĩ điều trị. 6. Bác sĩ điều trị kết hợp kết quả với tình trạng bệnh nhân để quyết định hướng xử trí. |
+| Bottleneck (bước nào, mất bao nhiêu phút) | Bước 3–4: Quan sát và nhận diện các dấu hiệu bất thường trên ảnh X-quang. Thời gian ước tính: khoảng 30 phút/ca (giả định ban đầu, cần xác minh thực tế).                                                                                                                                                                                                                                         |
+| Impact (nếu không giải thì sao)           | Bác sĩ có thể mất nhiều thời gian đọc ảnh, đặc biệt khi số lượng ca lớn; tăng nguy cơ bỏ sót các dấu hiệu bất thường và làm chậm quá trình đánh giá bệnh nhân.                                                                                                                                                                                                                                    |
+| Success metric (baseline → target)        | Recall (Sensitivity), Precision, F1-score và thời gian đọc ảnh. Mục tiêu giả định: giảm ít nhất 20–30% thời gian đọc ảnh mà vẫn duy trì Recall ở mức cao. Cần xác định baseline và target bằng dữ liệu thực tế.                                                                                                                                                                                   |
+| Phương án không dùng AI                   | Sử dụng checklist đọc X-quang chuẩn hóa, quy trình đọc ảnh hai lượt hoặc cơ chế bác sĩ thứ hai kiểm tra các ca nghi ngờ.                                                                                                                                                                                                                                                                          |
+| Giả thuyết về AI (nếu có)                 | Sử dụng mô hình Computer Vision để phân tích ảnh X-quang, đánh dấu các vùng có dấu hiệu nghi ngờ viêm phổi và đưa ra cảnh báo hỗ trợ bác sĩ xem xét. AI không thay thế chẩn đoán của bác sĩ.                                                                                                                                                                                                      |
+| Cảm nhận nhanh                            | Workflow (AI hỗ trợ phân tích ảnh và đánh dấu vùng nghi ngờ trong quy trình đọc X-quang).                                                                                                                                                                                                                                                                                                         |
 
 Quy trình nháp hiện tại:
 
 ```text
-
+1. Bệnh nhân được chỉ định chụp X-quang ngực.
+2. Hình ảnh X-quang được chuyển đến hệ thống để bác sĩ xem xét.
+3. Bác sĩ quan sát và phân tích các vùng phổi trên ảnh.
+4. Bác sĩ xác định các dấu hiệu bất thường, bao gồm dấu hiệu nghi ngờ viêm phổi.
+5. Bác sĩ ghi nhận kết quả và chuyển thông tin cho bác sĩ điều trị.
+6. Bác sĩ điều trị kết hợp kết quả với tình trạng bệnh nhân để quyết định hướng xử trí.
 ```
 
 ### Card muốn pitch nhất
