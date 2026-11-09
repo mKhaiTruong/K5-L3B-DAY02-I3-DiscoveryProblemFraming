@@ -18,20 +18,27 @@
 
 Lăng kính: **Lặp lại** · **Tốn thời gian** · **Cần đọc, tổng hợp nhiều thông tin** · **Pain từ người khác**.
 
-|   # | Lăng kính | Job Story: Khi… tôi muốn… để… | Ai chịu ảnh hưởng? | Dấu hiệu thật (thời gian, tần suất, số người, bằng chứng) |
-| --: | --------- | ----------------------------- | ------------------ | --------------------------------------------------------- |
-|   1 |           |                               |                    |                                                           |
-|   2 |           |                               |                    |                                                           |
-|   3 |           |                               |                    |                                                           |
-|   4 |           |                               |                    |                                                           |
-|   5 |           |                               |                    |                                                           |
-|   6 |           |                               |                    |                                                           |
-|   7 |           |                               |                    |                                                           |
-|   8 |           |                               |                    |                                                           |
+|   # | Lăng kính                          | Job Story: Khi… tôi muốn… để…                                                                                                                                                        | Ai chịu ảnh hưởng?                         | Dấu hiệu thật (thời gian, tần suất, số người, bằng chứng)                               |
+| --: | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------ | --------------------------------------------------------------------------------------- |
+|   1 | Tốn thời gian                      | Khi đọc ảnh X-quang ngực để chẩn đoán viêm phổi, tôi muốn được hỗ trợ nhận diện những vùng nghi ngờ tổn thương, để giảm nguy cơ bỏ sót dấu hiệu bất thường                           | Bác sĩ chẩn đoán hình ảnh, bác sĩ lâm sàng | Cần khảo sát số lượng ảnh X-quang phải đọc mỗi ngày và thời gian đọc trung bình mỗi ảnh |
+|   2 | Tốn thời gian / Tổng hợp thông tin | Khi gặp một ca bệnh có biểu hiện bất thường hoặc ít gặp, tôi muốn nhanh chóng tìm được tài liệu và nghiên cứu y khoa liên quan, để có thêm cơ sở tham khảo cho quyết định chuyên môn | Bác sĩ, bác sĩ nội trú                     | Cần khảo sát thời gian tra cứu và số lượng tài liệu phải tham khảo cho mỗi ca           |
+|   3 | Lặp lại                            | Khi cần kiểm tra hoặc phân loại thuốc, tôi muốn nhanh chóng xác định nhóm thuốc, hoạt chất và thông tin liên quan, để giảm thời gian tra cứu và hạn chế nhầm lẫn                     | Dược sĩ, bác sĩ, nhân viên quản lý dược    | Cần khảo sát số lượng thuốc phải tra cứu và thời gian xử lý mỗi ngày                    |
+|   4 | Tốn thời gian / Tổng hợp thông tin | Khi tiếp nhận bệnh nhân đã từng khám nhiều lần, tôi muốn nhanh chóng nắm được lịch sử bệnh án và quá trình điều trị trước đó, để có đủ thông tin phục vụ quá trình thăm khám         | Bác sĩ, nhân viên y tế                     | Cần khảo sát thời gian đọc hồ sơ và số lượng hồ sơ cần xem mỗi ca                       |
+|   5 | Lặp lại / Pain từ người khác       | Khi tiếp nhận nhiều yêu cầu từ bệnh nhân mỗi ngày, tôi muốn phân loại yêu cầu theo nội dung và mức độ ưu tiên, để chuyển đúng bộ phận phụ trách và giảm thời gian chờ phản hồi       | Nhân viên chăm sóc khách hàng, bệnh nhân   | Cần khảo sát số lượng yêu cầu mỗi ngày, thời gian phản hồi và tỷ lệ chuyển sai bộ phận  |
 
 **Nếu có dùng AI để gợi ý thêm:** ý nào AI gợi ý mà bạn giữ lại, ý nào bỏ và vì sao.
 
-- ***
+Giữ lại:
+
+- Tóm tắt hồ sơ bệnh án: AI gợi ý vì bác sĩ thường phải đọc nhiều hồ sơ từ các lần khám trước, việc tổng hợp thông tin có thể tốn thời gian.
+- Phân loại yêu cầu bệnh nhân: AI gợi ý vì bệnh viện có thể tiếp nhận nhiều yêu cầu qua các kênh khác nhau, cần phân loại để chuyển đúng bộ phận.
+
+Bỏ qua:
+
+- Chatbot tư vấn sức khỏe tổng quát: Quá rộng, có nguy cơ cung cấp thông tin y tế thiếu chính xác và không phù hợp để thay thế tư vấn chuyên môn.
+- Dự đoán bệnh từ triệu chứng: Phạm vi quá lớn, khó xác định dữ liệu đầu vào và tiêu chí đánh giá trong thời gian ngắn.
+
+---
 
 ## 3. Top 3 Problem Cards + quy trình nháp (CP2)
 
