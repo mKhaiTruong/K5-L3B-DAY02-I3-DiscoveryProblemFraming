@@ -21,7 +21,7 @@ Lăng kính: **Lặp lại** · **Tốn thời gian** · **Cần đọc, tổng 
 | # | Lăng kính | Job Story: Khi… tôi muốn… để… | Ai chịu ảnh hưởng? | Dấu hiệu thật (thời gian, tần suất, số người, bằng chứng) |
 |---:|---|---|---|---|
 | 1 | Cần đọc, tổng hợp nhiều thông tin | Khi bắt đầu đồ án tốt nghiệp, tôi muốn nắm nhanh nội dung chính của các bài báo liên quan, để biết hướng nào đã có người làm và hướng nào còn trống | Sinh viên làm đồ án | 3 paper/tuần × khoảng 45 phút/paper, tức khoảng 135 phút/tuần |
-| 2 | Lặp lại | Khi ứng tuyển thực tập hoặc việc làm, tôi muốn chỉnh CV cho khớp từng tin tuyển dụng, để không bị loại ở vòng lọc hồ sơ | Sinh viên năm cuối đi xin việc | 5 CV/tuần × 5 phút/lần chỉnh, tức khoảng 25 phút/tuần |
+| 2 | Lặp lại | Khi ứng tuyển thực tập hoặc việc làm, tôi muốn chỉnh CV cho khớp từng tin tuyển dụng, để không bị loại ở vòng lọc hồ sơ | Sinh viên năm cuối đi xin việc | 5 CV/tuần × khoảng 13–18 phút/CV (riêng bước sửa CV 10–15 phút), tức khoảng 65–90 phút/tuần |
 | 3 | Tốn thời gian | Khi nhiều môn có deadline trùng nhau, tôi muốn biết việc nào cần làm trước, để không nộp trễ bài quan trọng | Sinh viên học nhiều môn cùng lúc | 4 deadline trùng trong 1 tuần; 2 lần nộp trễ trong tuần đó |
 | 4 | Lặp lại | Khi tới cuối tháng, tôi muốn biết mình đã chi bao nhiêu và chi vào đâu, để không hết tiền trước kỳ nhận tiền | Bản thân | Khoảng 80 giao dịch/tháng rải ở 3 nơi (2 app ngân hàng, 1 ví MoMo); mỗi cuối tháng mất khoảng 20 phút xem lại lịch sử; lặp lại 3 tháng gần đây |
 | 5 | Lặp lại | Khi có hàng nhập kho, tôi muốn chép phiếu nhập vào hệ thống, để số tồn kho khớp với thực tế | Nhân viên nhập liệu, kế toán kho | 15 phiếu/tuần × khoảng 12 phút/phiếu, tức khoảng 180 phút (3 giờ)/tuần; khoảng 1 lần nhập sai/tháng |
@@ -38,7 +38,7 @@ Lăng kính: **Lặp lại** · **Tốn thời gian** · **Cần đọc, tổng 
 |---:|---|---|---|
 | 1 | Chép phiếu nhập kho (#5) | Lặp lại hằng tuần, tốn nhiều thời gian nhất (khoảng 180 phút/tuần), quy trình các bước cố định, dễ vẽ | Lỗi nhập sai có gây thiệt hại đáng kể không; nhà cung cấp có gửi được file điện tử không |
 | 2 | Tổng hợp chi tiêu cuối tháng (#4) | Lặp lại mỗi tháng, dữ liệu nằm rải ở 3 nơi, quy trình đơn giản dễ vẽ | Impact nhỏ (khoảng 20 phút/tháng); chưa rõ hậu quả thật của việc không tổng hợp |
-| 3 | Chỉnh CV theo tin tuyển dụng (#2) | Lặp lại hằng tuần khi đi xin việc, đo được thời gian | Impact nhỏ (khoảng 25 phút/tuần); chưa biết CV chỉnh có giúp qua vòng lọc nhiều hơn không |
+| 3 | Chỉnh CV theo tin tuyển dụng (#2) | Lặp lại hằng tuần khi đi xin việc, tốn khoảng 65–90 phút/tuần, bước sửa CV là bước nghẽn rõ | Chưa biết CV chỉnh có giúp qua vòng lọc nhiều hơn không |
 
 ### Problem Card #1
 
@@ -102,9 +102,9 @@ Kết quả: vẫn không biết chắc tổng chi tháng
 | Actor | Sinh viên năm cuối đang ứng tuyển vị trí thực tập / việc làm |
 | Thời điểm / bối cảnh | Mỗi khi gửi hồ sơ, khoảng 5 CV/tuần |
 | Quy trình hiện tại (3–7 bước) | 1. Đọc tin tuyển dụng · 2. So yêu cầu với CV hiện tại · 3. Sửa CV theo yêu cầu nhà tuyển dụng · 4. Xuất PDF · 5. Gửi |
-| Bottleneck (bước nào, mất bao nhiêu phút) | Bước 3: sửa CV, khoảng 2 phút/lần, lâu nhất trong quy trình |
-| Impact (nếu không giải thì sao) | Khoảng 25 phút/tuần; CV không khớp yêu cầu dễ bị loại ở vòng lọc hồ sơ; hiện 5 CV/tuần nhận 2 email phản hồi, 0 lời mời phỏng vấn |
-| Success metric (baseline → target) | Số lời mời phỏng vấn từ 0/5 CV/tuần lên ít nhất 1/5 CV/tuần; thời gian chỉnh giữ dưới 5 phút/CV |
+| Bottleneck (bước nào, mất bao nhiêu phút) | Bước 3: sửa CV theo yêu cầu, khoảng 10–15 phút/lần, chiếm phần lớn thời gian của cả quy trình |
+| Impact (nếu không giải thì sao) | Khoảng 65–90 phút/tuần; CV không khớp yêu cầu dễ bị loại ở vòng lọc hồ sơ; hiện 5 CV/tuần nhận 2 email phản hồi, 0 lời mời phỏng vấn |
+| Success metric (baseline → target) | Thời gian sửa CV từ khoảng 10–15 phút xuống dưới 5 phút/CV; số lời mời phỏng vấn từ 0/5 CV/tuần lên ít nhất 1/5 CV/tuần |
 | Phương án không dùng AI | Chuẩn bị sẵn CV gốc với các khối dự án/kỹ năng theo từng nhóm vị trí, mỗi lần chỉ chọn khối phù hợp; lập checklist từ khóa thường gặp trong tin tuyển dụng |
 | Giả thuyết về AI (nếu có) | AI so tin tuyển dụng với CV, chỉ ra kỹ năng hoặc từ khóa còn thiếu; tôi tự quyết định sửa gì, không để AI tự viết thêm kinh nghiệm không có thật |
 | Cảm nhận nhanh | No AI / Workflow |
@@ -112,10 +112,10 @@ Kết quả: vẫn không biết chắc tổng chi tháng
 Quy trình nháp hiện tại:
 
 ```text
-HIỆN TẠI — khoảng 5 phút/CV, 5 CV/tuần (khoảng 25 phút/tuần)
+HIỆN TẠI — khoảng 13–18 phút/CV, 5 CV/tuần (khoảng 65–90 phút/tuần)
 
 [1 Đọc tin tuyển dụng: khoảng 1'] → [2 So với CV: khoảng 1']
-→ [3 Sửa CV theo yêu cầu: khoảng 2'] ← BOTTLENECK
+→ [3 Sửa CV theo yêu cầu: 10–15'] ← BOTTLENECK
 → [4 Xuất PDF: khoảng 0,5'] → [5 Gửi: khoảng 0,5']
 ```
 
