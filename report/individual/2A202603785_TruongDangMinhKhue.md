@@ -130,15 +130,15 @@ Quy trình nháp hiện tại:
 
 ### Card muốn pitch nhất
 
-- Card số:
-- Vì sao:
-- Câu hỏi muốn nhóm phản biện:
+- Card số: 1
+- Vì sao: RAG giúp bác sĩ tiếp cận nhanh các tài liệu y khoa đáng tin cậy, đặc biệt với những ca bệnh hiếm hoặc ít gặp, từ đó có thêm cơ sở tham khảo khi đánh giá và lựa chọn hướng xử trí.
+- Câu hỏi muốn nhóm phản biện: Nhóm hỏi có bao nhiêu y bác sĩ sẽ dùng RAG để lấy thông tin về bệnh lạ khi mà họ được rèn luyện bài bản.
 
 ### AI đã phản biện card thế nào
 
-| Điểm yếu AI chỉ ra | Đồng ý? | Đã sửa gì |
-| ------------------ | ------- | --------- |
-|                    |         |           |
+| Điểm yếu AI chỉ ra                                                                                                                                             | Đồng ý?         | Đã sửa gì                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- | -------------------------------------------------------------------------------------------------------- |
+| Chưa chứng minh bác sĩ thực sự gặp khó khăn khi tìm kiếm thông tin về bệnh hiếm; bác sĩ đã được đào tạo chuyên môn và có thể sử dụng các nguồn y khoa hiện có. | Đồng ý một phần | Cần khảo sát bác sĩ về tần suất gặp ca bệnh hiếm, thời gian tìm kiếm tài liệu và mức độ hữu ích của RAG. |
 
 ---
 
