@@ -20,18 +20,13 @@ Lăng kính: **Lặp lại** · **Tốn thời gian** · **Cần đọc, tổng 
 
 | # | Lăng kính | Job Story: Khi… tôi muốn… để… | Ai chịu ảnh hưởng? | Dấu hiệu thật (thời gian, tần suất, số người, bằng chứng) |
 |---:|---|---|---|---|
-| 1 | | | | |
-| 2 | | | | |
-| 3 | | | | |
-| 4 | | | | |
-| 5 | | | | |
-| 6 | | | | |
-| 7 | | | | |
-| 8 | | | | |
+| 1 | Cần đọc, tổng hợp nhiều thông tin | Khi bắt đầu đồ án tốt nghiệp, tôi muốn nắm nhanh nội dung chính của các bài báo liên quan, để biết hướng nào đã có người làm và hướng nào còn trống | Sinh viên làm đồ án | 3 paper/tuần × khoảng 45 phút/paper, tức khoảng 135 phút/tuần |
+| 2 | Lặp lại | Khi ứng tuyển thực tập hoặc việc làm, tôi muốn chỉnh CV cho khớp từng tin tuyển dụng, để không bị loại ở vòng lọc hồ sơ | Sinh viên năm cuối đi xin việc | 5 CV/tuần × 5 phút/lần chỉnh, tức khoảng 25 phút/tuần |
+| 3 | Tốn thời gian | Khi nhiều môn có deadline trùng nhau, tôi muốn biết việc nào cần làm trước, để không nộp trễ bài quan trọng | Sinh viên học nhiều môn cùng lúc | 4 deadline trùng trong 1 tuần; 2 lần nộp trễ trong tuần đó |
+| 4 | Lặp lại | Khi tới cuối tháng, tôi muốn biết mình đã chi bao nhiêu và chi vào đâu, để không hết tiền trước kỳ nhận tiền | Bản thân | Khoảng 80 giao dịch/tháng rải ở 3 nơi (2 app ngân hàng, 1 ví MoMo); mỗi cuối tháng mất khoảng 20 phút xem lại lịch sử; lặp lại 3 tháng gần đây |
+| 5 | Lặp lại | Khi có hàng nhập kho, tôi muốn chép phiếu nhập vào hệ thống, để số tồn kho khớp với thực tế | Nhân viên nhập liệu, kế toán kho | 15 phiếu/tuần × 15 phút/phiếu, tức khoảng 225 phút (gần 4 giờ)/tuần |
 
 **Nếu có dùng AI để gợi ý thêm:** ý nào AI gợi ý mà bạn giữ lại, ý nào bỏ và vì sao.
-
--
 
 ---
 
