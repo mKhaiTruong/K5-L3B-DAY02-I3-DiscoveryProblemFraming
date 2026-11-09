@@ -82,16 +82,23 @@ Tổng: khoảng 10 phút/yêu cầu
 | Success metric (baseline → target) | Thời gian HR dành cho onboarding: **120 → 75 phút/nhân viên mới**; tỷ lệ hoàn tất checklist đúng ngày bắt đầu: **chưa đo → mục tiêu 90%** *(ước tính, cần xác minh)*. |
 | Phương án không dùng AI | Checklist onboarding theo vai trò, người phụ trách và hạn hoàn thành; nhắc việc theo lịch. |
 | Giả thuyết về AI (nếu có) | AI có thể trả lời câu hỏi phổ biến dựa trên tài liệu onboarding đã duyệt; checklist và nhắc việc có thể giải quyết phần điều phối chính. |
-| Cảm nhận nhanh | Workflow |
+| Cảm nhận nhanh | Workflow |Job Story	Khi nhân viên mới bắt đầu làm việc, tôi muốn biết các bước onboarding cần hoàn thành, để họ có thể bắt đầu công việc mà không bỏ sót thủ tục.
+Actor	HR điều phối chính; nhân viên mới, quản lý trực tiếp và IT cùng tham gia.
+Thời điểm / bối cảnh	Từ khi nhân viên mới xác nhận ngày bắt đầu đến khi hoàn tất thủ tục, thiết bị và quyền truy cập.
+Quy trình hiện tại (3–7 bước)	1. HR nhận thông tin nhân viên → 2. Lập danh sách thủ tục → 3. Theo dõi IT cấp quyền và thiết bị → 4. Hướng dẫn nhân viên → 5. Xác nhận hoàn tất.
+Bottleneck (bước nào, mất bao nhiêu phút)	Theo dõi và nhắc các bên hoàn tất thủ tục, quyền truy cập và thiết bị: khoảng 30 phút/nhân viên.
+Impact (nếu không giải thì sao)	Nhân viên có thể thiếu quyền truy cập hoặc thiết bị khi bắt đầu; HR và quản lý phải nhắc nhiều bên, thủ tục có thể bị bỏ sót.
+Success metric (baseline → target)	Thời gian HR dành cho onboarding: 120 → 75 phút/nhân viên mới; tỷ lệ hoàn tất checklist đúng ngày bắt đầu: chưa đo → mục tiêu 90% (ước tính, cần xác minh).
+Phương án không dùng AI	Checklist onboarding theo vai trò, người phụ trách và hạn hoàn thành; nhắc việc theo lịch.
+Giả thuyết về AI (nếu có)	AI có thể trả lời câu hỏi phổ biến dựa trên tài liệu onboarding đã duyệt; checklist và nhắc việc có thể giải quyết phần điều phối chính.
+Cảm nhận nhanh	Workflow
 
-**Quy trình nháp hiện tại:**
 
-```text
+Đặt quy trình nháp bên dưới bảng, tách riêng khỏi bảng:
 [Nhận thông tin: 15'] → [Lập checklist: 20']
 → [Theo dõi quyền truy cập/thiết bị: 30'] ← BOTTLENECK
 → [Hướng dẫn thủ tục: 40'] → [Xác nhận hoàn tất: 15']
 Tổng: khoảng 120 phút/nhân viên mới
-
 ### Problem Card #3
 
 | Trường | Nội dung |
