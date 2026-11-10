@@ -7,7 +7,7 @@
 
 - Tên nhóm: I3
 - Thành viên: xem `TEAM.md`
-- Candidate problem được chọn (1 câu):
+- Candidate problem được chọn (1 câu): Vendor Invoice Reconciliation
 - Quyết định cuối: Go / Not Yet / No-Go
 
 ---
@@ -122,30 +122,75 @@ Cách đã dùng: Phỏng vấn / Survey / Log, ticket, review
 
 Interview snapshot (mỗi buổi phỏng vấn một bảng, hoặc đặt file trong `report/assets/cp4-interview-snapshot-N.md`):
 
-| Trường                                            | Nội dung |
-| ------------------------------------------------- | -------- |
-| Người được hỏi (vai trò, không ghi tên thật)      |          |
-| Câu nói đáng nhớ nhất (nguyên văn)                |          |
-| Lần gần nhất gặp vấn đề này: chuyện gì đã xảy ra? |          |
-| Hiện đang xử lý bằng cách nào (workaround)?       |          |
-| Mất bao lâu, bao lần?                             |          |
-| Insight / opportunity rút ra                      |          |
+**Interview snapshot 1** (Trương Đặng Minh Khuê)
+
+| Trường                                            | Nội dung                                                                                  |
+| ------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| Người được hỏi (vai trò, không ghi tên thật)      | Kế toán công ty                                                                           |
+| Câu nói đáng nhớ nhất (nguyên văn)                | "Thời gian kiểm tra hóa đơn tùy thuộc vào giá trị hóa đơn, mặt hàng..."                   |
+| Lần gần nhất gặp vấn đề này: chuyện gì đã xảy ra? | Đã từng gặp chứng từ sai lệch, phải hủy chứng từ và làm lại cho đúng.                     |
+| Hiện đang xử lý bằng cách nào (workaround)?       | Sử dụng phần mềm FAST, nhưng vẫn có thao tác nhập dữ liệu và diễn giải nội dung thủ công. |
+| Mất bao lâu, bao lần?                             | Chưa có số liệu cụ thể; thời gian phụ thuộc giá trị hóa đơn và mặt hàng.                  |
+| Insight / opportunity rút ra                      | Sai lệch chứng từ gây thêm công việc xử lý và có thể làm chậm tiến độ.                    |
+
+**Interview snapshot 2** (Triệu Quốc Khánh)
+
+| Trường                                            | Nội dung                                                                                       |
+| ------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Người được hỏi (vai trò, không ghi tên thật)      | Nhân viên chăm sóc khách hàng                                                                  |
+| Câu nói đáng nhớ nhất (nguyên văn)                | "Quy trình so lô, hạn dùng thực tế với hóa đơn là mất thời gian và dễ sai sót nhất."           |
+| Lần gần nhất gặp vấn đề này: chuyện gì đã xảy ra? | Phải kiểm tra từng sản phẩm và đối chiếu thông tin lô, hạn dùng.                               |
+| Hiện đang xử lý bằng cách nào (workaround)?       | Sử dụng phần mềm MISA, nhưng các bước kiểm tra vẫn thực hiện thủ công.                         |
+| Mất bao lâu, bao lần?                             | Khoảng 5 phút/hóa đơn, 15 hóa đơn/tuần.                                                        |
+| Insight / opportunity rút ra                      | Việc kiểm tra chi tiết từng sản phẩm, đặc biệt là lô và hạn dùng, tốn thời gian và dễ sai sót. |
+
+**Interview snapshot 3** (Trịnh Tuấn Phong)
+
+| Trường                                            | Nội dung                                                                                                                                                                        |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Người được hỏi (vai trò, không ghi tên thật)      | Người có kinh nghiệm đối chiếu chứng từ (cần xác nhận chức danh)                                                                                                                |
+| Câu nói đáng nhớ nhất (nguyên văn)                | "Phần tốn thời gian nhất không phải là kiểm tra phép tính mà là đối chiếu thông tin giữa nhiều chứng từ khác nhau."                                                             |
+| Lần gần nhất gặp vấn đề này: chuyện gì đã xảy ra? | Đã gặp các trường hợp đơn giá sai lệch, mã hàng không khớp, hóa đơn trùng hoặc thông tin nhà cung cấp không chính xác.                                                          |
+| Hiện đang xử lý bằng cách nào (workaround)?       | Sử dụng MISA và Excel; kiểm tra chứng từ, xác minh sai lệch và liên hệ bộ phận mua hàng, kho hoặc nhà cung cấp.                                                                 |
+| Mất bao lâu, bao lần?                             | Hóa đơn đơn giản: 3–5 phút; nhiều mặt hàng: 10–20 phút; có sai lệch hoặc thiếu chứng từ: 30 phút đến vài giờ. Chưa rõ tần suất.                                                 |
+| Insight / opportunity rút ra                      | Đối chiếu thông tin giữa Invoice, PO và GRN là bottleneck chính, đặc biệt khi mã hàng không đồng nhất hoặc chứng từ thiếu. Sai lệch còn khiến quy trình thanh toán bị trì hoãn. |
+
+**Interview snapshot 4** (Trịnh Tuấn Phong)
+
+| Trường                                            | Nội dung                                                                                                                             |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Người được hỏi (vai trò, không ghi tên thật)      | Người có kinh nghiệm kiểm tra hóa đơn đầu vào (cần xác nhận chức danh)                                                               |
+| Câu nói đáng nhớ nhất (nguyên văn)                | "Công đoạn tốn thời gian nhất là đối chiếu từng mã hàng, số lượng và đơn giá giữa các chứng từ."                                     |
+| Lần gần nhất gặp vấn đề này: chuyện gì đã xảy ra? | Đã gặp sai mã hàng, chênh lệch số lượng hoặc đơn giá giữa hóa đơn và PO.                                                             |
+| Hiện đang xử lý bằng cách nào (workaround)?       | Sử dụng phần mềm kế toán và Excel; liên hệ bộ phận mua hàng hoặc nhà cung cấp để xác minh, điều chỉnh sai lệch.                      |
+| Mất bao lâu, bao lần?                             | Khoảng 5–10 phút/hóa đơn đơn giản; hóa đơn nhiều mặt hàng mất lâu hơn. Chưa rõ tần suất.                                             |
+| Insight / opportunity rút ra                      | Đối chiếu thủ công giữa nhiều chứng từ vẫn tốn thời gian; sai lệch khiến quy trình xác minh kéo dài và ảnh hưởng tiến độ thanh toán. |
 
 Tổng hợp:
 
-| Nguồn | Số người / số mẫu | Tín hiệu xác nhận | Tín hiệu phản bác |
-| ----- | ----------------: | ----------------- | ----------------- |
-|       |                   |                   |                   |
+| Nguồn     | Số người / số mẫu | Tín hiệu xác nhận                                                                                                                                                                                       | Tín hiệu phản bác                                                                                                      |
+| --------- | ----------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Phỏng vấn |                 4 | Cả 4 ghi nhận có thao tác thủ công. Nhiều người xác nhận việc đối chiếu mã hàng, số lượng, đơn giá giữa các chứng từ tốn thời gian. Sai lệch có thể khiến phải xác minh, điều chỉnh và chậm thanh toán. | Thời gian kiểm tra phụ thuộc độ phức tạp hóa đơn. MISA, FAST, phần mềm kế toán và Excel vẫn hỗ trợ một phần quy trình. |
 
 **Nhóm đã sửa problem thế nào sau kiểm chứng:**
+Nhóm thu hẹp từ việc tự động hóa toàn bộ quy trình Vendor Invoice Reconciliation thành:
+
+Hỗ trợ đối chiếu thông tin chi tiết giữa Invoice, PO và Goods Receipt Note (GRN), phát hiện sai lệch về mã hàng, số lượng, đơn giá và chuyển các trường hợp bất thường cho nhân viên xác minh.
+
+Lý do:
+
+- Phỏng vấn xác nhận việc đối chiếu nhiều chứng từ vẫn tốn thời gian.
+- Sai lệch khiến nhân viên phải xác minh, điều chỉnh và có thể trì hoãn thanh toán.
+- Phần mềm hiện tại đã hỗ trợ một phần quy trình, nên nhóm tập trung vào khoảng trống còn lại thay vì thay thế toàn bộ phần mềm kế toán.
 
 ### 3.3. Research giải pháp đã có
 
-| Công cụ / case / pattern | Link | Giải bước nào trong quy trình? | Điểm mạnh | Khoảng trống / rủi ro | Bài học cho nhóm |
-| ------------------------ | ---- | ------------------------------ | --------- | --------------------- | ---------------- |
-|                          |      |                                |           |                       |                  |
-|                          |      |                                |           |                       |                  |
-|                          |      |                                |           |                       |                  |
+| Công cụ / case / pattern                    | Link                                                                                                                            | Giải bước nào trong quy trình?                                  | Điểm mạnh                                                     | Khoảng trống / rủi ro                                                                | Bài học cho nhóm                                                                              |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------- |
+| MISA AMIS Kế toán                           | https://helpact.misa.vn/kb/giai-thich-y-nghia-va-cac-chuc-nang-co-trong-phan-he-mua-hang/?utm_source=chatgpt.com                | Quản lý PO, nhận hàng, hóa đơn đầu vào và chứng từ mua hàng.    | Các nghiệp vụ mua hàng được liên kết trong cùng hệ thống.     | Chưa xác minh được mức độ tự động đối chiếu chi tiết từng dòng hàng giữa 3 chứng từ. | Không nên xây lại toàn bộ chức năng quản lý mua hàng.                                         |
+| MISA ASP                                    | https://helpasp.misa.vn/accounting/kb/quan-ly-hoa-don-dau-vao/?utm_source=chatgpt.com                                           | Đồng bộ, nhập và tự động hạch toán hóa đơn đầu vào.             | Hỗ trợ nhập hóa đơn từ XML/PDF và giảm thao tác nhập liệu.    | Tự động hạch toán không đồng nghĩa với tự động đối chiếu đầy đủ Invoice–PO–GRN.      | Cần tập trung vào đối chiếu và phát hiện sai lệch.                                            |
+| FAST Accounting                             | https://fa12help.fast.com.vn/index.php/fa12help/mua-hang-va-cong-no-phai-tra/?utm_source=chatgpt.com                            | Quản lý đơn hàng, nhập hàng mua và hóa đơn đầu vào.             | Hỗ trợ nhiều nghiệp vụ mua hàng và theo dõi công nợ.          | Chưa xác minh được khả năng tự động matching 3 bên theo từng dòng hàng.              | Cần tìm hiểu những bước người dùng FAST vẫn phải làm thủ công.                                |
+| Microsoft Dynamics 365 – Three-way Matching | https://learn.microsoft.com/en-us/dynamics365/finance/accounts-payable/accounts-payable-invoice-matching?utm_source=chatgpt.com | Đối chiếu Invoice, PO và Product Receipt; phát hiện chênh lệch. | Có cơ chế matching và cảnh báo sai lệch theo ngưỡng thiết lập | Cần cấu hình quy tắc; các trường hợp ngoại lệ vẫn cần con người xử lý.               | Có thể tham khảo mô hình tự động đối chiếu và chỉ chuyển trường hợp bất thường cho nhân viên. |
 
 ---
 
@@ -156,18 +201,29 @@ Tổng hợp:
 Sơ đồ (ASCII, Mermaid hoặc link ảnh trong `report/assets/`):
 
 ```text
-
+![alt text](../assets/CP5.png)
 ```
 
-| Bước | Actor | Input | Output | Thời gian / tần suất | Ghi chú |
-| ---: | ----- | ----- | ------ | -------------------- | ------- |
-|    1 |       |       |        |                      |         |
-|    2 |       |       |        |                      |         |
-|    3 |       |       |        |                      |         |
-|    4 |       |       |        |                      |         |
-|    5 |       |       |        |                      |         |
+| Bước | Actor                                           | Input                                      | Output                                  | Thời gian / tần suất                                                      | Ghi chú                                                    |
+| ---: | ----------------------------------------------- | ------------------------------------------ | --------------------------------------- | ------------------------------------------------------------------------- | ---------------------------------------------------------- |
+|    1 | Kế toán                                         | Invoice từ nhà cung cấp                    | Invoice tiếp nhận                       | Chưa có dữ liệu cụ thể                                                    | Tiếp nhận hóa đơn và chứng từ liên quan                    |
+|    2 | Kế toán                                         | Invoice, PO, GRN                           | Bộ chứng từ được kiểm tra               | Chưa có dữ liệu cụ thể                                                    | Kiểm tra thông tin và tính đầy đủ của chứng từ             |
+|    3 | Kế toán                                         | Invoice và PO                              | Kết quả đối chiếu                       | Nằm trong tổng thời gian xử lý                                            | So sánh mã hàng, tên hàng, số lượng, đơn giá và thành tiền |
+|    4 | Kế toán                                         | Invoice và GRN                             | Kết quả đối chiếu                       | Nằm trong tổng thời gian xử lý                                            | Kiểm tra số lượng trên hóa đơn so với hàng thực nhận       |
+|    5 | Kế toán; phối hợp với mua hàng/kho/nhà cung cấp | Các thông tin sai lệch hoặc chứng từ thiếu | Thông tin được xác minh/cập nhật        | Có thể kéo dài từ 30 phút đến vài giờ khi có sai lệch hoặc thiếu chứng từ | Phải kiểm tra lại và liên hệ các bên liên quan             |
+|    6 | Kế toán                                         | Kết quả đối chiếu cuối cùng                | Hồ sơ được chuyển sang xử lý thanh toán | Chưa có dữ liệu cụ thể                                                    | Chỉ tiếp tục khi thông tin đã được xác minh                |
 
 **Bottleneck chính:**
+Kế toán phải đối chiếu thủ công thông tin giữa ba loại chứng từ (Invoice, PO và GRN), đặc biệt là mã hàng, số lượng và đơn giá. Khi phát hiện sai lệch hoặc thiếu chứng từ, kế toán phải kiểm tra lại và phối hợp với các bộ phận liên quan, làm tăng thời gian xử lý và có thể ảnh hưởng đến tiến độ thanh toán.
+
+Thời gian xử lý tham khảo từ phỏng vấn:
+
+- Hóa đơn đơn giản: khoảng 3–5 phút hoặc 5–10 phút.
+- Hóa đơn có nhiều mặt hàng: khoảng 10–20 phút.
+
+Trường hợp có sai lệch hoặc thiếu chứng từ: có thể kéo dài từ 30 phút đến vài giờ.
+
+Các con số trên là thời gian được người được phỏng vấn chia sẻ, chưa phải kết quả đo trung bình trên một tập hóa đơn thống nhất.
 
 ### 4.2. Quy trình tương lai
 
