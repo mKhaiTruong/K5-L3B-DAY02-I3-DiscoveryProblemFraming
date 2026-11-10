@@ -222,6 +222,7 @@ về phía phản biện nhóm, tôi muốn mạnh hơn ở chỗ hỏi số đo
 
 bài của nhóm tôi là #9 — Vendor Invoice Reconciliation: kế toán phải đối chiếu mã hàng, số lượng và đơn giá giữa hóa đơn nhà cung cấp với đơn đặt hàng (PO) và biên nhận, mất khoảng 5 phút mỗi hóa đơn và 2 phút trong đó là bước đối chiếu. vấn đề không phải là "thiếu AI" mà là bước đối chiếu làm bằng tay nên dễ bỏ sót đúng chỗ lệch, và lỗi đó chỉ lộ ra khi đã thanh toán. quy trình hiện tại là: nhận hóa đơn → đối chiếu ba trường với PO và biên nhận → xác định chứng từ thiếu hoặc lệch → chuyển bộ phận mua hàng xác minh → kế toán phê duyệt → thanh toán. metric đặt đúng vào bước nghẽn: từ 5 phút xuống 3 phút mỗi hóa đơn, đo bằng bấm giờ trên một lô hóa đơn thật, kèm đếm số hóa đơn phải sửa lại để không đánh đổi tốc độ lấy sai sót. boundary là hệ thống chỉ được đọc và đề xuất kết quả khớp/lệch; kế toán là người xác nhận từng hóa đơn, hệ thống không được tự ghi sổ, tự duyệt hay tự sửa số liệu. vì đối chiếu mã hàng – số lượng – đơn giá là so khớp có quy tắc, nhóm chọn mức Rule chứ không lên Workflow/Agent: chỉ phần đọc chứng từ không có cấu trúc mới cần AI, và phần đó chưa đáng đánh đổi thêm chi phí lẫn rủi ro bỏ sót. quyết định là Go với pilot nhỏ — chạy đối chiếu theo Rule trên một lô hóa đơn thật trong 2–4 tuần — và ngưỡng dừng là nếu kế toán vẫn phải sửa quá nửa số kết quả, hoặc để lọt một chỗ lệch trong 100 hóa đơn, thì quay về checklist đối chiếu tay.
 
+
 ---
 
 ## 7. Tài liệu tham khảo
