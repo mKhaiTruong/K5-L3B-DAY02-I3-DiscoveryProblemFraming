@@ -172,15 +172,27 @@ Trả lời bằng trải nghiệm thật của bạn, tối thiểu 200 từ ch
 
 **6.1. Tôi học được gì khi nghe top 3 problems của các bạn khác?**
 
+Sau khi nghe top 3 problem của các thành viên trong nhóm, em nhận ra điểm chung của problem là nhiều card dùng đối chiếu, tổng hợp nhiều nguồn thủ công.
+
 **6.2. Nhóm có lúc nào bị "solution-first" (nghĩ giải pháp trước khi hiểu vấn đề) không? Lúc đó nhóm nhận ra và xử lý thế nào?**
+
+Có, nhóm phải loại bỏ AI đọc phiếu, OCR, dashboard vì là solution đội lốt opportunity.
 
 **6.3. Tôi có đổi ý sau khi bị phản biện không? Kể một lần cụ thể.**
 
+Trước khi Phong hỏi, em nghĩ nút thắt của card #10 là tìm mã, gõ số lượng. Câu hỏi của Phong đã tách bước đó thành mất thời gian ở gõ số lượng hay tìm đúng mã hàng, điều mà em chưa phân biệt được. Em đổi ý ở chỗ nghi ngờ AI đọc phiếu là cách duy nhất. Sau đó em hỏi trực tiếp người làm việc đó để đối chiếu và kiểm chứng.
+
 **6.4. Kết quả kiểm chứng (phỏng vấn/survey/research) có làm tôi bất ngờ không? Điều gì?**
+
+Trước khi phỏng vấn, nhóm giả định bottleneck là so mã hàng, số lượng, đơn giá. Sau khi hỏi thì nhận ra bước tốn thời gian nhất là so lô và hạn dùng. Kết quả làm thay đổi suy nghĩ về cách sử dụng AI vào bài toán.
 
 **6.5. Điều khó nhất khi viết Problem Statement là gì?**
 
+Vì em vẫn đang là sinh viên năm cuối, nên điều khó nhất khi viết Problem Statement là không biết việc gì khiến mình làm đi làm lại tốn thời gian nhất để viết, phải mất lúc lâu mới nghĩ ra được.
+
 **6.6. Nếu làm lại, tôi sẽ đổi gì? Tôi sẽ phản biện nhóm mạnh hơn ở điểm nào?**
+
+Nếu làm lại, em sẽ phản biện nhóm mạnh hơn vẫn là card 9. Theo em nghĩ thì trong công ty nếu chỉ có ít người đi công tác thì kế toán không mất nhiều thời gian để đối chiếu giấy tờ để hoàn tiền cho người được hỗ trợ công tác.
 
 **6.7. Hiểu bài:** giải thích bằng 5–8 câu, không nhìn tài liệu, chuỗi *problem → quy trình → metric → boundary → mức can thiệp AI → quyết định* của bài nhóm mình.
 
