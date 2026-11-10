@@ -4,8 +4,8 @@
 
 ## Thông tin nhóm
 
-- Tên nhóm:
-- Candidate problem nhóm chọn (1 câu):
+- Tên nhóm: I3
+- Candidate problem nhóm chọn (1 câu): Vendor Invoice Reconciliation: kế toán phải đối chiếu thủ công mã hàng, số lượng và đơn giá giữa hóa đơn, đơn đặt hàng (PO) và phiếu nhận hàng, tốn thời gian và dễ sót sai lệch.
 - Quyết định cuối (Go / Not Yet / No-Go):
 
 ## Thành viên
