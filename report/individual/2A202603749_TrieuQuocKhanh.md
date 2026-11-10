@@ -140,12 +140,12 @@ HIỆN TẠI — khoảng 13–18 phút/CV, 5 CV/tuần (khoảng 65–90 phút/
 
 | Hoạt động | Tôi đã làm gì? | Kết quả / ảnh hưởng tới bài nhóm |
 |---|---|---|
-| Pitch Problem Card | | |
-| Phản biện bài của bạn khác | Câu hỏi tôi đã đặt: | |
-| Nhận phản biện | Câu hỏi tôi nhận được: | Tôi đã sửa gì: |
+| Pitch Problem Card | Pitch Card #1: chép phiếu nhập kho vào MISA (khoảng 15 phiếu/tuần × 12 phút, khoảng 180 phút/tuần; khoảng 1 lần nhập sai/tháng). Câu hỏi nhờ nhóm phản biện: nếu nhà cung cấp gửi được file Excel để nhập thẳng vào MISA thì còn cần AI đọc phiếu giấy không? | |
+| Phản biện bài của bạn khác | Câu hỏi tôi đã đặt:<br>(1) #4 Quản lý việc và deadline phân tán (Trịnh Tuấn Phong): "Tháng vừa rồi bạn bỏ sót mấy deadline? Sót vì không biết hạn hay vì không kịp làm?"<br>(2) #7 Employee Onboarding Tracker (Nguyễn Đình Nam): "Đã có Excel, phần mềm nhân sự hoặc nhắc việc tự động chưa, và nó thiếu gì?"<br>(3) #9 Vendor Invoice Reconciliation (Nguyễn Đình Nam): "Phần mềm kế toán công ty đã có sẵn chức năng đối chiếu hóa đơn chưa?" | |
+| Nhận phản biện | Câu hỏi tôi nhận được:<br>(1) #10 (Trịnh Tuấn Phong): thời gian mất ở gõ số lượng hay tìm mã hàng; nếu chuẩn hóa danh mục, quét barcode hoặc điền sẵn từ PO (rule) thì đã giải được 80% chưa?<br>(2) #11 (Trịnh Tuấn Phong): các khoản chuyển MoMo và ngân hàng khác nhau ở đâu; nếu một rule khớp cặp giao dịch là loại được trùng thì phần nào buộc phải dùng AI?<br>(3) #12 (Trương Đặng Minh Khuê): AI sửa CV có làm nội dung thiếu cá nhân hóa, giống CV hàng loạt, và giảm đánh giá của HR không? | Tôi đã sửa gì: |
 | Gom cluster / cây OST | | |
 | Chọn candidate problem | | |
-| Kiểm chứng / research | | |
+| Kiểm chứng / research | Phỏng vấn 1 người làm khâu kiểm tra hóa đơn (vai trò: chăm sóc khách hàng, đảm nhận cả kiểm tra hóa đơn) và gửi kết quả vào nhóm. | Kết quả: 5 phút/hóa đơn × 15 hóa đơn/tuần (75 phút/tuần); bước tốn thời gian và dễ sai nhất là so lô/hạn dùng; MISA không tự đối chiếu, mọi bước làm thủ công; khi sai lệch (lô/hạn dùng, chênh nhẹ số lượng/đơn giá) công việc ngưng để đối soát với kho/nhà cung cấp, làm biên bản hoặc điều chỉnh hóa đơn rồi mới nhập MISA và thanh toán. Xác nhận giả định sai lệch gây chậm thanh toán; lệch với giả định của nhóm về bottleneck (mã, số lượng, đơn giá). Mẫu chỉ 1 người. |
 | Quy trình nhóm | | |
 | Problem Statement | | |
 | Mức can thiệp AI | | |
@@ -158,8 +158,8 @@ HIỆN TẠI — khoảng 13–18 phút/CV, 5 CV/tuần (khoảng 65–90 phút/
 | Checkpoint | Tôi dùng AI để làm gì? | AI hữu ích ở đâu? | AI sai hoặc hời hợt ở đâu? | Tôi sửa gì bằng nhận định của mình? |
 |---|---|---|---|---|
 | CP1 Scan | | | | |
-| CP2 Problem Card | | | | |
-| CP4 Research | | | | |
+| CP2 Problem Card | Nhờ AI phản biện Card #1 (bảng "AI đã phản biện card thế nào" ở mục 3) | Chỉ ra 4 điểm yếu: baseline 12 phút chỉ là ước lượng; 1 lỗi/tháng là ít, chưa rõ thiệt hại; AI đọc phiếu có thể đọc sai số lượng; chưa kiểm phương án đơn giản (MISA nhập Excel, mã vạch) | Chỉ đồng ý một phần ở điểm "1 lỗi/tháng là ít", vì impact chính của card là thời gian chứ không phải số lần lỗi | Ghi "khoảng" cho baseline; thêm bước nhân viên đối chiếu từng dòng vào giả thuyết AI; đưa mức thiệt hại và phương án Excel/mã vạch thành câu cần kiểm chứng ở CP4 |
+| CP4 Research | Chỉ dùng AI để sắp xếp ghi chép sau phỏng vấn thành bảng snapshot; không dùng AI để hỏi hay tạo câu trả lời | Phát hiện câu trả lời đánh số lệch với 5 câu hỏi và thiếu câu 5; chỉ ra bottleneck người được hỏi nêu khác giả định của nhóm | Chưa thấy AI sai ở bước này; AI không có số liệu về tần suất sai lệch nên chỉ gợi ý hỏi thêm | Hỏi lại người được phỏng vấn để bổ sung câu 5 trước khi gửi nhóm |
 | CP5 Quy trình | | | | |
 | CP5–6 Problem Statement | | | | |
 | CP6 Mức can thiệp / quyết định | | | | |
