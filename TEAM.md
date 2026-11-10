@@ -48,7 +48,7 @@ Mỗi thành viên thêm một mục theo mẫu dưới đây, tiêu đề là `
 - Scan 5 problem, lập 3 Problem Card, pitch Inventory Receipt Entry (#10) cho nhóm.
 - Đặt 3 câu phản biện: #4 (Trịnh Tuấn Phong), #7 và #9 (Nguyễn Đình Nam).
 - Phỏng vấn 1 người làm khâu kiểm tra hóa đơn và gửi kết quả vào nhóm: 5 phút/hóa đơn, 15 hóa đơn/tuần; bước tốn thời gian và dễ sai nhất là so lô/hạn dùng; sai lệch làm ngưng việc để đối soát với kho/nhà cung cấp.
-- Phát hiện lỗi cộng điểm ở bảng 2.4 (dòng "Soạn trả lời tin nhắn/email": 26, không phải 25) và lỗi chép câu phản biện #7 ở bảng 2.1, báo trưởng nhóm sửa.
+- Phát hiện lỗi cộng điểm ở bảng 2.4 (dòng "Soạn trả lời tin nhắn/email": 26, không phải 25)
 
 **Bằng chứng** (phần nào trong `group_report.md`, file nào trong `report/assets/`, commit nào):
 
