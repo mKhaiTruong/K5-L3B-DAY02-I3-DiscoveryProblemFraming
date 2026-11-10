@@ -200,9 +200,9 @@ Lý do:
 
 Sơ đồ (ASCII, Mermaid hoặc link ảnh trong `report/assets/`):
 
-```text
-![alt text](../assets/CP5.png)
-```
+<p align="center">
+  <img src="../assets/CP5.png" alt="alt text" width="200">
+</p>
 
 | Bước | Actor                                           | Input                                      | Output                                  | Thời gian / tần suất                                                      | Ghi chú                                                    |
 | ---: | ----------------------------------------------- | ------------------------------------------ | --------------------------------------- | ------------------------------------------------------------------------- | ---------------------------------------------------------- |
@@ -229,103 +229,121 @@ Các con số trên là thời gian được người được phỏng vấn chi
 
 Ghi rõ bước nào **Rule**, bước nào **AI**, bước nào **con người**, **boundary** ở đâu, **phương án quay về** khi AI sai.
 
-```text
-
-```
+<p align="center">
+  <img src="../assets/CP5_2.png" alt="alt text" width="200">
+</p>
 
 ### 4.3. Before / after
 
-| Chỉ số               | Trước | Sau (kỳ vọng) | Ghi chú |
-| -------------------- | ----: | ------------: | ------- |
-| Số bước              |       |               |         |
-| Tổng thời gian       |       |               |         |
-| Số bước thủ công     |       |               |         |
-| Bottleneck chính     |       |               |         |
-| Rủi ro mới phát sinh |       |               |         |
+| Chỉ số               |                                                                                       Trước |                                                                         Sau (kỳ vọng) | Ghi chú                                                   |
+| -------------------- | ------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------------------: | --------------------------------------------------------- |
+| Số bước              |                                                                                           6 |                                                                                     6 | Giữ nguyên các bước nghiệp vụ, tự động hóa một phần xử lý |
+| Tổng thời gian       | 3–5 phút (hóa đơn đơn giản); 10–20 phút (nhiều mặt hàng); 30 phút đến vài giờ (có sai lệch) |                         Chưa xác định; kỳ vọng giảm thời gian trích xuất và đối chiếu | Cần pilot để đo thời gian thực tế                         |
+| Số bước thủ công     |                                                         6 bước có sự tham gia của con người | 3 bước chính do con người thực hiện: tiếp nhận, xác minh ngoại lệ, xác nhận cuối cùng | AI và Rule hỗ trợ trích xuất, đối chiếu                   |
+| Bottleneck chính     |                                       Đối chiếu thủ công Invoice, PO, GRN và xử lý sai lệch |                Xác minh các trường hợp dữ liệu thiếu, trích xuất sai hoặc có sai lệch | Chuyển trọng tâm từ đối chiếu toàn bộ sang xử lý ngoại lệ |
+| Rủi ro mới phát sinh |                                      Sai sót do nhập liệu hoặc bỏ sót khi kiểm tra thủ công |                     AI trích xuất sai, ghép nhầm mặt hàng, Rule đối chiếu chưa đầy đủ | Cần human review và phương án quay về xử lý thủ công      |
 
 ---
 
 ## 5. Problem Statement v0 (CP5)
 
-| Trường                                                                     | Nội dung |
-| -------------------------------------------------------------------------- | -------- |
-| **Actor**                                                                  |          |
-| **Quy trình**                                                              |          |
-| **Bottleneck**                                                             |          |
-| **Impact**                                                                 |          |
-| **Success Metric** (baseline → target, cách đo)                            |          |
-| **Boundary** (AI không được làm gì; khi nào cần con người kiểm tra — HITL) |          |
+| Trường                                                                     | Nội dung                                                                                                                                                                                                                                                                                                                                                                                                      |
+| :------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Actor**                                                                  | Kế toán phụ trách kiểm tra và xử lý hóa đơn đầu vào.                                                                                                                                                                                                                                                                                                                                                          |
+| **Quy trình**                                                              | Tiếp nhận Invoice từ nhà cung cấp, kiểm tra và đối chiếu với Purchase Order (PO) và Goods Receipt Note (GRN) trước khi chuyển hồ sơ sang xử lý thanh toán.                                                                                                                                                                                                                                                    |
+| **Bottleneck**                                                             | Đối chiếu thủ công mã hàng, số lượng, đơn giá và thành tiền giữa ba loại chứng từ. Khi có sai lệch hoặc thiếu thông tin, kế toán phải kiểm tra lại và phối hợp với bộ phận mua hàng, kho hoặc nhà cung cấp.                                                                                                                                                                                                   |
+| **Impact**                                                                 | Tăng thời gian xử lý hóa đơn, phát sinh công việc kiểm tra và xác minh lại, có thể làm chậm tiến độ thanh toán và tăng nguy cơ sai sót trong quá trình đối chiếu.                                                                                                                                                                                                                                             |
+| **Success Metric** (baseline → target, cách đo)                            | **Baseline:** 3–5 phút/hóa đơn đơn giản; 10–20 phút/hóa đơn nhiều mặt hàng; 30 phút đến vài giờ nếu có sai lệch (theo phỏng vấn). **Target:** Giảm ít nhất 30% thời gian đối chiếu trung bình trong pilot. **Cách đo:** So sánh thời gian xử lý cùng loại hóa đơn trước và sau khi áp dụng giải pháp; đồng thời theo dõi tỷ lệ trích xuất chính xác, tỷ lệ phát hiện sai lệch và tỷ lệ cần kiểm tra thủ công. |
+| **Boundary** (AI không được làm gì; khi nào cần con người kiểm tra — HITL) | AI chỉ hỗ trợ trích xuất và tóm tắt thông tin, không tự tạo dữ liệu còn thiếu, tự kết luận tính hợp lệ hoặc phê duyệt thanh toán. Rule thực hiện đối chiếu theo các điều kiện đã xác định. Kế toán phải kiểm tra khi dữ liệu thiếu, không đọc được, độ tin cậy thấp hoặc phát hiện sai lệch; mọi quyết định cuối cùng thuộc về con người.                                                                     |
 
-Phản biện nhận được (từ AI hoặc nhóm khác) và nhóm có đồng ý không:
+**Phản biện nhận được:**
 
-- ***
+- **Phản biện:** Phần mềm kế toán hiện tại (ví dụ MISA/FAST) có thể đã hỗ trợ quản lý hóa đơn và nghiệp vụ mua hàng. Liệu giải pháp đề xuất có đang xây dựng lại chức năng đã tồn tại? (AI)
+- **Đánh giá:** Đồng ý đây là rủi ro cần xác minh. Các cuộc phỏng vấn cho thấy vẫn có thao tác kiểm tra và đối chiếu thủ công, nhưng chưa đủ bằng chứng để kết luận phần mềm hiện tại không có chức năng three-way matching.
+- **Hướng xử lý:** Cần xác minh chức năng và phiên bản phần mềm doanh nghiệp đang sử dụng. Giải pháp chỉ nên tập trung vào phần đối chiếu còn thủ công hoặc chưa được hỗ trợ hiệu quả.
+
+---
+
+- **Phản biện:** Phần mềm kế toán công ty đã có sẵn chức năng đối chiếu hóa đơn chưa? (Trong nhóm)
+- **Đánh giá:** Đồng ý. Đây là vấn đề cần xác minh trước khi đề xuất giải pháp.
+- **Hướng xử lý:** Khảo sát chức năng đối chiếu hóa đơn của phần mềm hiện tại (MISA/FAST hoặc phần mềm khác), đặc biệt khả năng đối chiếu ba chứng từ Invoice, PO và GRN ở cấp độ từng mặt hàng. Xác định phần nào đã được tự động hóa và phần nào vẫn cần kế toán thao tác thủ công.
+
+---
 
 ## 6. Mức can thiệp AI (CP6)
 
 ### 6.1. Ma trận độ mơ hồ × độ phức tạp
 
-Bài của nhóm nằm ở ô:
-
-Vì sao:
+**Ma trận:** Độ mơ hồ **trung bình** (Invoice, PO và GRN có thể khác định dạng, cách ghi tên/mã hàng hoặc thiếu thông tin), độ phức tạp **thấp–trung bình** (có 3 nguồn chứng từ nhưng các trường cần đối chiếu và quy tắc nghiệp vụ tương đối cố định). → Workflow kết hợp AI trích xuất dữ liệu, Rule đối chiếu và con người xác minh.
 
 ### 6.2. So sánh 4 mức
 
-| Mức                       | Phương án cho bài của nhóm | Đủ khi nào | Rủi ro | Chọn? |
-| ------------------------- | -------------------------- | ---------- | ------ | ----- |
-| **No AI** (sửa quy trình) |                            |            |        |       |
-| **Rule**                  |                            |            |        |       |
-| **Workflow**              |                            |            |        |       |
-| **Agent**                 |                            |            |        |       |
-
-**Mức chọn:**
+| **Mức**      | **Phương án**                                                                             | **Đủ khi nào**                                                                                                   | **Rủi ro**                                                                                | **Chọn?**                                           |
+| ------------ | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | --------------------------------------------------- |
+| **No AI**    | Kế toán sử dụng checklist/template để kiểm tra Invoice, PO và GRN                         | Số lượng hóa đơn ít, dữ liệu đã rõ ràng và việc kiểm tra thủ công không tốn nhiều thời gian                      | Vẫn phải đọc và đối chiếu từng chứng từ thủ công                                          | Phù hợp với doanh nghiệp có khối lượng hóa đơn thấp |
+| **Rule**     | Script so sánh mã hàng, số lượng, đơn giá và thành tiền giữa 3 chứng từ                   | Dữ liệu đã được nhập vào hệ thống theo cấu trúc thống nhất                                                       | Không xử lý tốt dữ liệu thiếu, sai định dạng hoặc tên/mã hàng không đồng nhất             | **Dùng cho bước đối chiếu**                         |
+| **Workflow** | AI trích xuất dữ liệu → Rule đối chiếu → AI tóm tắt sai lệch → Kế toán xác minh           | Chứng từ có định dạng khác nhau nhưng quy trình kiểm tra và quy tắc đối chiếu vẫn tương đối cố định              | AI trích xuất sai hoặc ghép nhầm mặt hàng; cần người kiểm tra trước khi xử lý tiếp        | **Chọn**                                            |
+| **Agent**    | AI tự tìm chứng từ liên quan, tự đối chiếu, liên hệ các bộ phận và quyết định hướng xử lý | Quy trình có nhiều tình huống phát sinh không thể xác định trước và cần hệ thống tự lựa chọn hành động tiếp theo | Quyền truy cập rộng, nguy cơ xử lý sai chứng từ hoặc tự thực hiện hành động không phù hợp | Không chọn                                          |
 
 **Vì sao không chọn mức đơn giản hơn:**
 
+- **No AI:** Vẫn yêu cầu kế toán đọc và kiểm tra thủ công từng chứng từ, chưa giải quyết trực tiếp bottleneck chính.
+- **Rule:** Có thể đối chiếu chính xác khi dữ liệu đầu vào đã được chuẩn hóa, nhưng chưa giải quyết được việc trích xuất dữ liệu từ các chứng từ khác định dạng hoặc không đồng nhất.
+- **Workflow:** Kết hợp AI để trích xuất và hỗ trợ xử lý dữ liệu không đồng nhất, Rule để thực hiện đối chiếu theo điều kiện cố định, và kế toán để xác minh sai lệch.
+- Các cuộc phỏng vấn cho thấy vẫn tồn tại thao tác kiểm tra và đối chiếu thủ công. Tuy nhiên, nhóm chưa xác minh đầy đủ chức năng của phần mềm kế toán hiện tại, nên cần kiểm tra trước khi triển khai giải pháp.
+
 ### 6.3. AI Canvas rút gọn
 
-| Thành phần                                                        | Nội dung |
-| ----------------------------------------------------------------- | -------- |
-| **Prediction** — AI dự đoán / tạo ra gì?                          |          |
-| **Judgment** — con người cân nhắc, quyết định gì?                 |          |
-| **Action** — hành động cuối cùng là gì, ai làm?                   |          |
-| **Outcome** — đo kết quả bằng gì?                                 |          |
-| **Input** — AI cần dữ liệu đầu vào gì mỗi lần chạy? Có sẵn không? |          |
-| **Feedback** — lấy phản hồi ở đâu để cải thiện?                   |          |
+| **Thành phần** | **Nội dung**                                                                                                                                                               |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prediction** | Trích xuất các trường dữ liệu từ Invoice, PO và GRN; nhận diện các trường có khả năng không khớp hoặc thiếu thông tin.                                                     |
+| **Judgment**   | Rule xác định trường dữ liệu khớp hoặc sai lệch theo quy tắc nghiệp vụ. Kế toán đánh giá các trường hợp bất thường và quyết định có chấp nhận kết quả đối chiếu hay không. |
+| **Action**     | Đánh dấu các trường khớp/sai lệch, tạo bản tóm tắt các vấn đề cần kiểm tra và chuyển cho kế toán xác minh.                                                                 |
+| **Outcome**    | Thời gian xử lý mỗi hóa đơn; tỷ lệ trích xuất chính xác; tỷ lệ phát hiện sai lệch; tỷ lệ kết quả cần kế toán kiểm tra hoặc chỉnh sửa.                                      |
+| **Input**      | Invoice, Purchase Order (PO), Goods Receipt Note (GRN); thông tin mã hàng, tên hàng, số lượng, đơn giá và thành tiền.                                                      |
+| **Feedback**   | Kết quả xác minh của kế toán, các trường dữ liệu được chỉnh sửa, các trường hợp ghép nhầm mặt hàng và sai lệch bị bỏ sót.                                                  |
 
 ### 6.4. Hai câu hỏi của Google PAIR
 
-- Người dùng muốn **được hỗ trợ (augment)** hay **giao hẳn việc (automate)**? Bằng chứng:
-- AI sai kiểu nào tệ hơn, **báo nhầm** hay **bỏ sót**? Vì sao, và thiết kế đã xử lý thế nào:
-
----
+- **Augment hay automate?** Augment. Hệ thống hỗ trợ trích xuất và đối chiếu chứng từ, nhưng kế toán vẫn xác minh các trường hợp sai lệch và chịu trách nhiệm quyết định cuối cùng. Không tự động phê duyệt hoặc thanh toán hóa đơn.
+- **Sai kiểu nào tệ hơn?** Bỏ sót sai lệch hoặc đánh dấu nhầm một hóa đơn không hợp lệ thành hợp lệ nguy hiểm hơn việc cảnh báo nhầm một hóa đơn hợp lệ. Vì vậy, ưu tiên giảm false negatives trong phát hiện sai lệch. Các cảnh báo cần được kế toán xác minh trước khi xử lý thanh toán.
 
 ## 7. Problem Statement v1 + tiêu chí đánh giá (CP6)
 
-| Trường                                          | Nội dung                        |
-| ----------------------------------------------- | ------------------------------- |
-| **Actor**                                       |                                 |
-| **Quy trình**                                   |                                 |
-| **Bottleneck**                                  |                                 |
-| **Impact**                                      |                                 |
-| **Success Metric** (baseline → target, cách đo) |                                 |
-| **Boundary**                                    |                                 |
-| **AI intervention point**                       |                                 |
-| **Mức chọn**                                    | No AI / Rule / Workflow / Agent |
-| **Rủi ro & người kiểm tra**                     |                                 |
+| **Trường**                  | **Nội dung**                                                                                                                                                                                                                                                                                    |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Actor**                   | Kế toán phụ trách kiểm tra hóa đơn đầu vào và đối chiếu chứng từ trước khi thanh toán.                                                                                                                                                                                                          |
+| **Quy trình**               | Nhận Invoice → kiểm tra chứng từ → đối chiếu Invoice với PO và GRN → xác minh sai lệch (nếu có) → chuyển hồ sơ sang xử lý thanh toán.                                                                                                                                                           |
+| **Bottleneck**              | Đối chiếu thủ công mã hàng, tên hàng, số lượng và đơn giá giữa Invoice, PO và GRN. Khi có sai lệch hoặc thiếu thông tin, kế toán phải kiểm tra lại và liên hệ các bộ phận liên quan.                                                                                                            |
+| **Impact**                  | Tăng thời gian xử lý hóa đơn, phát sinh công việc kiểm tra và xác minh lại, có thể làm chậm tiến độ thanh toán và tăng nguy cơ sai sót trong đối chiếu.                                                                                                                                         |
+| **Success Metric**          | (1) Giảm ít nhất 30% thời gian đối chiếu trung bình so với baseline; (2) Tỷ lệ trích xuất chính xác các trường dữ liệu đạt ít nhất 95%; (3) Không bỏ sót sai lệch nghiêm trọng trong tập dữ liệu kiểm thử. Đo bằng cách chạy pilot trên tập hóa đơn có kết quả đối chiếu được kế toán xác nhận. |
+| **Boundary**                | AI không tự tạo dữ liệu còn thiếu, tự kết luận hóa đơn hợp lệ hoặc tự phê duyệt/thực hiện thanh toán. Kế toán phải kiểm tra các trường hợp dữ liệu thiếu, không đọc được, độ tin cậy thấp hoặc có sai lệch.                                                                                     |
+| **AI intervention point**   | Sau khi tiếp nhận Invoice, PO và GRN, trước bước kế toán kiểm tra và đối chiếu thủ công. AI trích xuất dữ liệu; Rule thực hiện đối chiếu; AI tóm tắt các sai lệch để kế toán xác minh.                                                                                                          |
+| **Mức chọn**                | Workflow (AI trích xuất → Rule đối chiếu → AI tóm tắt → Kế toán xác minh).                                                                                                                                                                                                                      |
+| **Rủi ro & người kiểm tra** | Trích xuất sai, ghép nhầm mặt hàng hoặc bỏ sót sai lệch → Kế toán kiểm tra kết quả đối chiếu, đặc biệt các trường hợp bất thường, trước khi chuyển hồ sơ sang thanh toán.                                                                                                                       |
 
-**Thay đổi so với v0 và lý do:**
+### So sánh Problem Statement v0 và v1
 
-| Trường | v0  | v1  | Vì sao đổi |
-| ------ | --- | --- | ---------- |
-|        |     |     |            |
+| **Trường**            | **v0**                                 | **v1**                                                                          | **Vì sao đổi**                               |
+| --------------------- | -------------------------------------- | ------------------------------------------------------------------------------- | -------------------------------------------- |
+| Actor                 | Kế toán                                | Kế toán phụ trách kiểm tra hóa đơn đầu vào                                      | Làm rõ vai trò trực tiếp thực hiện quy trình |
+| Quy trình             | Kiểm tra và đối chiếu Invoice, PO, GRN | Bổ sung bước tiếp nhận, xác minh sai lệch và chuyển thanh toán                  | Phản ánh đầy đủ quy trình AS-IS              |
+| Success Metric        | Chưa có target cụ thể                  | Thêm mục tiêu giảm 30% thời gian, độ chính xác trích xuất và phát hiện sai lệch | Cần đo cả hiệu quả và độ tin cậy             |
+| AI intervention point | Chưa xác định                          | Sau tiếp nhận chứng từ, trước đối chiếu thủ công                                | Xác định rõ vị trí Workflow can thiệp        |
+| Mức chọn              | Chưa xác định                          | Workflow                                                                        | Dựa trên phân tích CP6                       |
+| Boundary              | AI không phê duyệt thanh toán          | Bổ sung giới hạn trích xuất, xử lý dữ liệu thiếu và HITL                        | Kiểm soát rủi ro nghiệp vụ                   |
 
-**Tiêu chí đánh giá đầu ra của AI (3–5 tiêu chí):**
+### Tiêu chí đánh giá kết quả
 
-|   # | Tiêu chí | Đạt khi | Không đạt khi |
-| --: | -------- | ------- | ------------- |
-|   1 |          |         |               |
-|   2 |          |         |               |
-|   3 |          |         |               |
+| **#** | **Tiêu chí**             | **Đạt khi**                                                                      | **Không đạt khi**                                                  |
+| ----: | ------------------------ | -------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+|     1 | Đúng dữ liệu trích xuất  | Các trường mã hàng, số lượng, đơn giá và thành tiền khớp với chứng từ gốc        | Trích xuất sai hoặc bỏ sót trường dữ liệu                          |
+|     2 | Phát hiện sai lệch       | Phát hiện được các sai lệch có trong Invoice, PO và GRN                          | Bỏ sót sai lệch thực tế                                            |
+|     3 | Không ghép nhầm mặt hàng | Chỉ đối chiếu các mặt hàng có căn cứ xác định tương ứng                          | Ghép nhầm hai mặt hàng có tên hoặc mã gần giống nhau               |
+|     4 | Tiết kiệm thời gian      | Thời gian đối chiếu trung bình giảm ít nhất 30% so với baseline                  | Thời gian xử lý không giảm hoặc tăng do phải sửa kết quả AI        |
+|     5 | Human-in-the-loop        | Các trường hợp không chắc chắn hoặc có sai lệch được chuyển cho kế toán xác minh | Hệ thống tự kết luận hoặc chuyển thanh toán khi chưa được xác nhận |
+
+**Lưu ý về target:** Mức 30% và 95% là mục tiêu đề xuất cho pilot, chưa phải kết quả đã được kiểm chứng. Cần xác định tập dữ liệu kiểm thử và thống nhất cách tính accuracy trước khi đánh giá.
 
 ---
 
