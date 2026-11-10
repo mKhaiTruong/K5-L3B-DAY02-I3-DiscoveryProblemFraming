@@ -8,7 +8,7 @@
 - Tên nhóm: I3
 - Thành viên: xem `TEAM.md`
 - Candidate problem được chọn (1 câu): Vendor Invoice Reconciliation
-- Quyết định cuối: Go / Not Yet / No-Go
+- Quyết định cuối: Go
 
 ---
 
@@ -166,11 +166,22 @@ Interview snapshot (mỗi buổi phỏng vấn một bảng, hoặc đặt file 
 | Mất bao lâu, bao lần?                             | Khoảng 5–10 phút/hóa đơn đơn giản; hóa đơn nhiều mặt hàng mất lâu hơn. Chưa rõ tần suất.                                             |
 | Insight / opportunity rút ra                      | Đối chiếu thủ công giữa nhiều chứng từ vẫn tốn thời gian; sai lệch khiến quy trình xác minh kéo dài và ảnh hưởng tiến độ thanh toán. |
 
+**Interview snapshot 5** (Trương Đặng Minh Khuê)
+
+| Trường                                            | Nội dung                                                                                                |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Người được hỏi (vai trò, không ghi tên thật)      | Nhân viên thủ quỹ, thủ kho                                                                              |
+| Câu nói đáng nhớ nhất (nguyên văn)                | "10 phút, mất thời gian nhất là đối chiếu hợp đồng, báo giá, nghiệm thu..."                             |
+| Lần gần nhất gặp vấn đề này: chuyện gì đã xảy ra? | Đã từng gặp trường hợp chứng từ sai lệch, dẫn đến chậm tiến độ thanh toán.                              |
+| Hiện đang xử lý bằng cách nào (workaround)?       | Đối chiếu thủ công giữa hóa đơn và các chứng từ liên quan như hợp đồng, báo giá, biên bản nghiệm thu.   |
+| Mất bao lâu, bao lần?                             | Khoảng 10 phút cho một hóa đơn; chưa có thông tin về số lượng hóa đơn xử lý mỗi ngày/tuần.              |
+| Insight / opportunity rút ra                      | Việc đối chiếu nhiều loại chứng từ thủ công tốn thời gian; sai lệch có thể làm chậm tiến độ thanh toán. |
+
 Tổng hợp:
 
 | Nguồn     | Số người / số mẫu | Tín hiệu xác nhận                                                                                                                                                                                       | Tín hiệu phản bác                                                                                                      |
 | --------- | ----------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Phỏng vấn |                 4 | Cả 4 ghi nhận có thao tác thủ công. Nhiều người xác nhận việc đối chiếu mã hàng, số lượng, đơn giá giữa các chứng từ tốn thời gian. Sai lệch có thể khiến phải xác minh, điều chỉnh và chậm thanh toán. | Thời gian kiểm tra phụ thuộc độ phức tạp hóa đơn. MISA, FAST, phần mềm kế toán và Excel vẫn hỗ trợ một phần quy trình. |
+| Phỏng vấn |                 5 | Cả 5 ghi nhận có thao tác thủ công. Nhiều người xác nhận việc đối chiếu mã hàng, số lượng, đơn giá giữa các chứng từ tốn thời gian. Sai lệch có thể khiến phải xác minh, điều chỉnh và chậm thanh toán. | Thời gian kiểm tra phụ thuộc độ phức tạp hóa đơn. MISA, FAST, phần mềm kế toán và Excel vẫn hỗ trợ một phần quy trình. |
 
 **Nhóm đã sửa problem thế nào sau kiểm chứng:**
 Nhóm thu hẹp từ việc tự động hóa toàn bộ quy trình Vendor Invoice Reconciliation thành:
@@ -351,33 +362,65 @@ Ghi rõ bước nào **Rule**, bước nào **AI**, bước nào **con người*
 
 ### 8.1. Bốn rủi ro
 
-| Rủi ro          | Câu hỏi                                                           | Mức độ rủi ro (Thấp = an toàn / TB / Cao = nguy hiểm) | Lý do / bằng chứng |
-| --------------- | ----------------------------------------------------------------- | ----------------------------------------------------- | ------------------ |
-| **Value**       | Người dùng có thật sự cần và sẽ dùng không?                       |                                                       |                    |
-| **Usability**   | Người dùng có dùng được, có hiểu và sửa được đầu ra của AI không? |                                                       |                    |
-| **Feasibility** | Có đủ dữ liệu, công cụ, kỹ năng để làm không?                     |                                                       |                    |
-| **Viability**   | Có hợp chi phí, pháp lý, quy định tổ chức không? Ai vận hành?     |                                                       |                    |
+| Rủi ro          | Câu hỏi                                                           | Mức độ rủi ro (Thấp = an toàn / TB / Cao = nguy hiểm) | Lý do / bằng chứng                                                                                                                                                                                                                 |
+| --------------- | ----------------------------------------------------------------- | ----------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Value**       | Người dùng có thật sự cần và sẽ dùng không?                       | Trung bình                                            | Các cuộc phỏng vấn cho thấy kế toán mất thời gian đối chiếu Invoice–PO–GRN; trường hợp nhiều dòng hàng hoặc có sai lệch cần nhiều thời gian hơn. Tuy nhiên, chưa có baseline được đo thống nhất để xác định mức tiết kiệm thực tế. |
+| **Usability**   | Người dùng có dùng được, có hiểu và sửa được đầu ra của AI không? | Thấp                                                  | Workflow có thể tích hợp vào quy trình hiện tại: kế toán cung cấp chứng từ, kiểm tra kết quả và xử lý trường hợp bất thường. Không yêu cầu kế toán tự xây dựng hay vận hành mô hình AI                                             |
+| **Feasibility** | Có đủ dữ liệu, công cụ, kỹ năng để làm không?                     | Trung bình                                            | Có thể thử nghiệm trích xuất thông tin bằng AI và đối chiếu bằng Rule. Tuy nhiên, cần kiểm tra khả năng xử lý các định dạng chứng từ, độ chính xác khi ghép các dòng hàng và dữ liệu thực tế.                                      |
+| **Viability**   | Có hợp chi phí, pháp lý, quy định tổ chức không? Ai vận hành?     | Trung bình                                            | Chưa xác minh phần mềm kế toán hiện tại (MISA/FAST hoặc công cụ khác) đã hỗ trợ đối chiếu ba bên ở cấp dòng hàng đến mức nào. Nếu chức năng này đã đáp ứng tốt nhu cầu, giá trị bổ sung của giải pháp sẽ thấp.                     |
 
 ### 8.2. Kết luận
 
-**Quyết định:** Go / Not Yet / No-Go
+**Quyết định:** Go, phạm vi nhỏ (Conditional Go).
 
-**Lý do:**
+**Lý do:** Pain point có bằng chứng ban đầu và có thể kiểm chứng bằng pilot. Tuy nhiên, chưa đủ cơ sở để triển khai rộng vì baseline thời gian và khả năng của phần mềm hiện tại chưa được xác minh.
 
-**Nếu Go — pilot nhỏ nhất:**
+**Pilot nhỏ nhất (2 tuần):**
 
-**Nếu Not Yet — cần kiểm chứng gì trước:**
+1. Thu thập một tập Invoice, PO và GRN đã được xử lý, có cả trường hợp khớp và sai lệch.
+2. Chọn một nhóm nhỏ chứng từ để thử nghiệm AI trích xuất thông tin và Rule đối chiếu.
+3. Kế toán kiểm tra kết quả, xác nhận lỗi trích xuất, ghép sai dòng hàng và sai lệch bị bỏ sót.
+4. Ghi nhận thời gian xử lý, độ chính xác trích xuất, khả năng phát hiện sai lệch và tỷ lệ trường hợp cần kiểm tra thủ công.
+5. Trước pilot, xác minh với kế toán/IT chức năng đối chiếu hiện có của MISA/FAST và chính sách sử dụng dữ liệu nội bộ với AI.
 
-**Nếu No-Go — nên làm gì thay AI:**
+**Ngưỡng dừng:**
 
-**Ngưỡng dừng** (nếu sau … mà … thì quay về …):
+- Nếu phần mềm hiện tại đã hỗ trợ đối chiếu Invoice–PO–GRN ở cấp dòng hàng và đáp ứng tốt quy trình → đánh giá lại giá trị bổ sung, có thể No-Go.
+- Nếu hệ thống ghép sai dòng hàng hoặc bỏ sót sai lệch quan trọng → dừng thử nghiệm tự động đối chiếu và xem lại quy tắc/khâu kiểm tra.
+- Nếu chứng từ không đủ chất lượng để trích xuất đáng tin cậy → chuyển các trường hợp đó sang nhập liệu và kiểm tra thủ công.
+- Nếu pilot không giảm thời gian xử lý so với quy trình hiện tại → chưa mở rộng triển khai.
 
 ---
 
 ## 9. Hạn chế và hướng tiếp theo
 
--
+- Baseline chưa đồng nhất: Thời gian xử lý được ghi nhận từ các cuộc phỏng vấn, nhưng khác nhau theo số lượng dòng hàng và mức độ sai lệch. Cần đo trên cùng loại chứng từ trong pilot.
+- Số lượng mẫu còn hạn chế: Chưa có đủ dữ liệu thực tế để kết luận mức tiết kiệm thời gian hoặc độ chính xác của giải pháp.
+
+- Chưa xác minh phần mềm hiện tại: Cần kiểm tra MISA/FAST đang được sử dụng có hỗ trợ đối chiếu Invoice–PO–GRN ở cấp dòng hàng hay không.
+
+- Chất lượng dữ liệu chưa rõ: Định dạng chứng từ, tên hàng và mã hàng không đồng nhất có thể ảnh hưởng đến trích xuất và đối chiếu.
+
+- Hướng tiếp theo: Nếu pilot đạt yêu cầu, mở rộng thử nghiệm với nhiều nhà cung cấp, định dạng hóa đơn và trường hợp sai lệch khác nhau; sau đó mới cân nhắc tích hợp vào quy trình kế toán.
+
+**Lưu ý:** Các ngưỡng như giảm 30% thời gian xử lý và độ chính xác trích xuất 95% ở CP6 nên được ghi là mục tiêu đề xuất cho pilot, chưa phải kết quả đã đạt được.
 
 ## 10. Tài liệu tham khảo
 
--
+1. Microsoft Learn – Invoice data extraction with Azure AI Document Intelligence.
+   Tài liệu về khả năng OCR, trích xuất thông tin hóa đơn và các dòng hàng (line items) từ chứng từ. https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/invoice?view=doc-intel-4.0.0&utm_source=chatgpt.com
+
+2. Microsoft Learn – Invoice model2. MISA AMIS – Mua hàng trong nước về nhập kho.
+   Tài liệu hướng dẫn ghi nhận thông tin hóa đơn, mã hàng, số lượng, đơn giá và thành tiền trong quy trình mua hàng. https://helpact.misa.vn/kb/muahang_trongnuoc_venhapkho/?utm_source=chatgpt.com
+
+3. MISA AMIS – Mua hàng trong nước về nhập kho3. MISA AMIS – Nghiệp vụ mua hàng.
+   Tổng quan các quy trình mua hàng, đơn mua hàng, nhập kho và ghi nhận hóa đơn trên phần mềm. https://helpact.misa.vn/ac/mua-hang/?utm_source=chatgpt.com
+
+4. MISA AMIS – Mua hàng4. FAST Accounting 12 – Nhập mua hàng.
+   Tài liệu về nhập hàng, lập phiếu nhập từ đơn hàng mua và kế thừa thông tin chi tiết mặt hàng. https://fa12help.fast.com.vn/index.php/fa12help/nhap-mua-hang/?utm_source=chatgpt.com
+
+5. FAST Accounting 12 – Nhập mua hàng5. FAST Accounting 12 – Nhập chi phí mua hàng.
+   Tài liệu về ghi nhận và phân bổ chi phí mua hàng liên quan đến phiếu nhập. https://fa12help.fast.com.vn/index.php/fa12help/nhap-chi-phi-mua-hang/?utm_source=chatgpt.com
+
+6. FAST Accounting 12 – Nhập chi phí mua hàng6. Microsoft Azure – Document Intelligence Studio.
+   Tổng quan khả năng trích xuất văn bản, bảng, cấu trúc và các trường dữ liệu từ tài liệu. https://contentunderstanding.ai.azure.com/documentintelligence/?utm_source=chatgpt.com
