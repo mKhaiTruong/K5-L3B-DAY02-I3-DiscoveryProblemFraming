@@ -212,7 +212,7 @@ Lý do:
 Sơ đồ (ASCII, Mermaid hoặc link ảnh trong `report/assets/`):
 
 <p align="center">
-  <img src="../assets/CP5.png" alt="alt text" width="200">
+  <img src="../assets/cp5-workflow-now.png" alt="alt text" width="200">
 </p>
 
 | Bước | Actor                                           | Input                                      | Output                                  | Thời gian / tần suất                                                      | Ghi chú                                                    |
@@ -241,7 +241,7 @@ Các con số trên là thời gian được người được phỏng vấn chi
 Ghi rõ bước nào **Rule**, bước nào **AI**, bước nào **con người**, **boundary** ở đâu, **phương án quay về** khi AI sai.
 
 <p align="center">
-  <img src="../assets/CP5_2.png" alt="alt text" width="200">
+  <img src="../assets/cp5-workflow-future.png" alt="alt text" width="200">
 </p>
 
 ### 4.3. Before / after
